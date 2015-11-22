@@ -1,0 +1,20 @@
+{
+  "name": "plaza",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/react-native/packager/packager.sh"
+  },
+  "dependencies": {
+    "backbonereactnative": "^0.0.4",
+    "format-price": "^0.0.2",
+    "numeral": "^1.5.3",
+    "react-native": "^0.14.2",
+    "react-native-facebook-login": "0.7.0",
+    "react-native-fileupload": "^1.1.0",
+    "react-native-icons": "^0.6.3",
+    "react-native-mapbox-gl": "^1.1.0",
+    "react-timer-mixin": "^0.13.2",
+    "underscore": "^1.8.3"
+  }
+}
