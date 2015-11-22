@@ -1,0 +1,99 @@
+{
+  "checksum": {
+    "previous": "608693493e084d11b89b069f1b314243040c8e23ebcb1179f2d9e1cb8a89dd42",
+    "current": "608693493e084d11b89b069f1b314243040c8e23ebcb1179f2d9e1cb8a89dd42"
+  },
+  "fonts": [
+    "fonts/icon_608693493e084d11b89b069f1b314243.ttf",
+    "fonts/icon_608693493e084d11b89b069f1b314243.svg",
+    "fonts/icon_608693493e084d11b89b069f1b314243.woff",
+    "fonts/icon_608693493e084d11b89b069f1b314243.eot"
+  ],
+  "glyphs": {
+    "addressbook": {
+      "codepoint": 61696,
+      "source": "icons/addressbook.svg"
+    },
+    "arrow_icon": {
+      "codepoint": 61697,
+      "source": "icons/arrow_icon.svg"
+    },
+    "back_arrow": {
+      "codepoint": 61698,
+      "source": "icons/back_arrow.svg"
+    },
+    "bookmark": {
+      "codepoint": 61699,
+      "source": "icons/bookmark.svg"
+    },
+    "cake": {
+      "codepoint": 61700,
+      "source": "icons/cake.svg"
+    },
+    "checkmark": {
+      "codepoint": 61701,
+      "source": "icons/checkmark.svg"
+    },
+    "close_icon": {
+      "codepoint": 61702,
+      "source": "icons/close_icon.svg"
+    },
+    "hamb_icon": {
+      "codepoint": 61703,
+      "source": "icons/hamb_icon.svg"
+    },
+    "heart": {
+      "codepoint": 61704,
+      "source": "icons/heart.svg"
+    },
+    "icon_cake": {
+      "codepoint": 61705,
+      "source": "icons/icon_cake.svg"
+    },
+    "icon_roller": {
+      "codepoint": 61706,
+      "source": "icons/icon_roller.svg"
+    },
+    "mapmarker": {
+      "codepoint": 61707,
+      "source": "icons/mapmarker.svg"
+    },
+    "next_arrow": {
+      "codepoint": 61708,
+      "source": "icons/next_arrow.svg"
+    },
+    "search_icon": {
+      "codepoint": 61709,
+      "source": "icons/search_icon.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": "fontcustom.yml",
+    "css_selector": ".icon-{{glyph}}",
+    "debug": false,
+    "font_name": "icon",
+    "force": false,
+    "input": {
+      "templates": "icons",
+      "vectors": "icons"
+    },
+    "no_hash": false,
+    "output": {
+      "css": "fonts",
+      "fonts": "fonts",
+      "preview": "fonts"
+    },
+    "preprocessor_path": null,
+    "quiet": false,
+    "skip_first": false,
+    "templates": [
+      "scss",
+      "preview"
+    ]
+  },
+  "templates": [
+    "fonts/_icon.scss",
+    "fonts/icon-preview.html"
+  ]
+}

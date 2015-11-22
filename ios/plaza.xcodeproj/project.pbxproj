@@ -48,6 +48,18 @@
 		BE9CB1E91C013E110051377A /* Material-Design-Iconic-Font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE9CB1D41C013E100051377A /* Material-Design-Iconic-Font.ttf */; };
 		BE9CB1EA1C013E110051377A /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE9CB1D51C013E100051377A /* octicons.ttf */; };
 		BE9CB1EB1C013E110051377A /* zocial-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE9CB1D61C013E100051377A /* zocial-regular-webfont.ttf */; };
+		BE9CB1FE1C0171DA0051377A /* libRCTMapboxGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CB1FB1C0171A80051377A /* libRCTMapboxGL.a */; };
+		BE9CB2001C0172270051377A /* Mapbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE9CB1FF1C0172270051377A /* Mapbox.bundle */; };
+		BE9CB2021C01725E0051377A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE9CB2011C01725E0051377A /* Settings.bundle */; };
+		BE9CB2041C01727C0051377A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CB2031C01727C0051377A /* CoreTelephony.framework */; };
+		BE9CB2061C0172850051377A /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CB2051C0172850051377A /* GLKit.framework */; };
+		BE9CB2081C01728D0051377A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CB2071C01728D0051377A /* ImageIO.framework */; };
+		BE9CB20A1C0172940051377A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CB2091C0172940051377A /* MobileCoreServices.framework */; };
+		BE9CB20C1C0172A00051377A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CB20B1C0172A00051377A /* QuartzCore.framework */; };
+		BE9CB20E1C0172A90051377A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CB20D1C0172A90051377A /* SystemConfiguration.framework */; };
+		BE9CB2101C0172B50051377A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CB20F1C0172B50051377A /* libc++.tbd */; };
+		BE9CB2121C0172C00051377A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CB2111C0172C00051377A /* libsqlite3.tbd */; };
+		BE9CB2141C0172CB0051377A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CB2131C0172CB0051377A /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +147,20 @@
 			remoteGlobalIDString = 2F5A3EB81ACDBF8000439386;
 			remoteInfo = ReactNativeIcons;
 		};
+		BE9CB1FA1C0171A80051377A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE9CB1F51C0171A80051377A /* RCTMapboxGL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C5DBB3401AF2EF2B00E611A9;
+			remoteInfo = RCTMapboxGL;
+		};
+		BE9CB1FC1C0171A80051377A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE9CB1F51C0171A80051377A /* RCTMapboxGL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C5DBB34B1AF2EF2B00E611A9;
+			remoteInfo = RCTMapboxGLTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -185,6 +211,18 @@
 		BE9CB1D41C013E100051377A /* Material-Design-Iconic-Font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Material-Design-Iconic-Font.ttf"; sourceTree = "<group>"; };
 		BE9CB1D51C013E100051377A /* octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = octicons.ttf; sourceTree = "<group>"; };
 		BE9CB1D61C013E100051377A /* zocial-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "zocial-regular-webfont.ttf"; sourceTree = "<group>"; };
+		BE9CB1F51C0171A80051377A /* RCTMapboxGL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTMapboxGL.xcodeproj; path = "../node_modules/react-native-mapbox-gl/ios/RCTMapboxGL.xcodeproj"; sourceTree = "<group>"; };
+		BE9CB1FF1C0172270051377A /* Mapbox.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Mapbox.bundle; sourceTree = "<group>"; };
+		BE9CB2011C01725E0051377A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		BE9CB2031C01727C0051377A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		BE9CB2051C0172850051377A /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		BE9CB2071C01728D0051377A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		BE9CB2091C0172940051377A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		BE9CB20B1C0172A00051377A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BE9CB20D1C0172A90051377A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BE9CB20F1C0172B50051377A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		BE9CB2111C0172C00051377A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		BE9CB2131C0172CB0051377A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +237,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE9CB2141C0172CB0051377A /* libz.tbd in Frameworks */,
+				BE9CB2121C0172C00051377A /* libsqlite3.tbd in Frameworks */,
+				BE9CB2101C0172B50051377A /* libc++.tbd in Frameworks */,
+				BE9CB20E1C0172A90051377A /* SystemConfiguration.framework in Frameworks */,
+				BE9CB20C1C0172A00051377A /* QuartzCore.framework in Frameworks */,
+				BE9CB20A1C0172940051377A /* MobileCoreServices.framework in Frameworks */,
+				BE9CB2081C01728D0051377A /* ImageIO.framework in Frameworks */,
+				BE9CB2061C0172850051377A /* GLKit.framework in Frameworks */,
+				BE9CB2041C01727C0051377A /* CoreTelephony.framework in Frameworks */,
+				BE9CB1FE1C0171DA0051377A /* libRCTMapboxGL.a in Frameworks */,
 				BE9CB1C11C013DD60051377A /* libReactNativeIcons.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -326,6 +374,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BE9CB1F51C0171A80051377A /* RCTMapboxGL.xcodeproj */,
 				BE9CB1BB1C013DA80051377A /* ReactNativeIcons.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -352,6 +401,17 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				BE9CB2131C0172CB0051377A /* libz.tbd */,
+				BE9CB2111C0172C00051377A /* libsqlite3.tbd */,
+				BE9CB20F1C0172B50051377A /* libc++.tbd */,
+				BE9CB20D1C0172A90051377A /* SystemConfiguration.framework */,
+				BE9CB20B1C0172A00051377A /* QuartzCore.framework */,
+				BE9CB2091C0172940051377A /* MobileCoreServices.framework */,
+				BE9CB2071C01728D0051377A /* ImageIO.framework */,
+				BE9CB2051C0172850051377A /* GLKit.framework */,
+				BE9CB2031C01727C0051377A /* CoreTelephony.framework */,
+				BE9CB2011C01725E0051377A /* Settings.bundle */,
+				BE9CB1FF1C0172270051377A /* Mapbox.bundle */,
 				BE9CB1C21C013E100051377A /* FAKFontAwesome.h */,
 				BE9CB1C31C013E100051377A /* FAKFontAwesome.m */,
 				BE9CB1C41C013E100051377A /* FAKFoundationIcons.h */,
@@ -395,6 +455,15 @@
 			isa = PBXGroup;
 			children = (
 				BE9CB1C01C013DA80051377A /* libReactNativeIcons.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE9CB1F61C0171A80051377A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE9CB1FB1C0171A80051377A /* libRCTMapboxGL.a */,
+				BE9CB1FD1C0171A80051377A /* RCTMapboxGLTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -480,6 +549,10 @@
 				{
 					ProductGroup = 78C398B11ACF4ADC00677621 /* Products */;
 					ProjectRef = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
+				},
+				{
+					ProductGroup = BE9CB1F61C0171A80051377A /* Products */;
+					ProjectRef = BE9CB1F51C0171A80051377A /* RCTMapboxGL.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302D41ABCB9D200DB3ED1 /* Products */;
@@ -596,6 +669,20 @@
 			remoteRef = BE9CB1BF1C013DA80051377A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		BE9CB1FB1C0171A80051377A /* libRCTMapboxGL.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTMapboxGL.a;
+			remoteRef = BE9CB1FA1C0171A80051377A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BE9CB1FD1C0171A80051377A /* RCTMapboxGLTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RCTMapboxGLTests.xctest;
+			remoteRef = BE9CB1FC1C0171A80051377A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -610,6 +697,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE9CB2021C01725E0051377A /* Settings.bundle in Resources */,
+				BE9CB2001C0172270051377A /* Mapbox.bundle in Resources */,
 				BE9CB1D71C013E100051377A /* FAKFontAwesome.h in Resources */,
 				BE9CB1D81C013E100051377A /* FAKFontAwesome.m in Resources */,
 				BE9CB1D91C013E100051377A /* FAKFoundationIcons.h in Resources */,
