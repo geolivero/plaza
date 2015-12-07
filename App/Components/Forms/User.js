@@ -7,6 +7,7 @@ import Settings from './../../../Settings';
 import { Icon, } from 'react-native-icons';
 import TxtInput from './../Forms/Fields/TxtInput';
 import Messages from './../Widgets/Message';
+import { UIImagePickerManager, } from 'NativeModules';
 
 
 var {
@@ -19,6 +20,7 @@ var {
   TextInput,
   Animated,
   TouchableOpacity,
+  CameraRoll,
   ScrollView
 } = React;
 
@@ -31,6 +33,8 @@ export default class User extends React.Component {
       shiftUp: new Animated.Value(Settings.box.height),
       text: '',
       step: 0,
+      avatarSource: false,
+      username: this.props.model.get('name') || '',
       allowed: false,
       emailText: '',
       passwText: ''
@@ -49,6 +53,17 @@ export default class User extends React.Component {
       this.onModelChange(model)
     });
 
+    Helpers.userToken.get((SESSIONDATA)=> {
+      if (SESSIONDATA) {
+        this.props.model.set(SESSIONDATA.user);
+
+        this.setState({
+          username: this.props.model.get('name'),
+          step: 1
+        });
+      }
+    });
+
   }
 
   onModelChange(model) {
@@ -60,11 +75,7 @@ export default class User extends React.Component {
     this.setState({
       showMessage: true
     });
-    switch(this.state.step) {
-      case 1:
-        this.saveData();
-        break;
-    }
+    this.saveData();
   }
 
   onBack() {
@@ -86,28 +97,83 @@ export default class User extends React.Component {
     });
   }
 
-  saveData() {
-    this.props.model.setURL(this.state.step < 1 ? 'mnguser' : 'user');
-    Helpers.getToken((token)=> {
-
-      this.props.model.setToken(token);
-      this.props.model.save({}, {
-        success: (model)=> {
-          console.log('success');
-          console.log(model);
-          this.setState({
-            showMessage: false,
-            step: this.state.step + 1
-          });
-        },
-        error: (model, error)=> {
-          console.log('error');
-          console.log(model);
-          console.log(error);
-        }
-      });
-
+  onSuccess() {
+    this.setState({
+      showMessage: false,
+      step: this.state.step + 1
     });
+  }
+
+  saveData() {
+    //this.props.model.setURL('mnguser');
+
+    switch(this.state.step) {
+      case 0:
+        // create new user
+        Helpers.getToken((token)=> {
+          this.props.model.setToken(token);
+
+          this.props.model.save({}, {
+
+            success: (model)=> {
+
+              Helpers.login(token, {
+                username: this.props.model.get('email'),
+                password: this.state.passwText
+              }, (model)=> {
+                this.props.model.set(model.user);
+                console.log(model);
+                Helpers.userToken.save(model.token, model.session_name, model.sessid, model.user);
+                this.setState({
+                  passwText: null,
+                  step: 1
+                });
+                this.hideLoadingMessage();
+              });
+            },
+
+            error: (model, error)=> {
+              console.log('error saving');
+              console.log(error);
+              //@todo: Create an error view
+            }
+
+          });
+        });
+      break; 
+
+      default:
+        this.setState({
+          isSaving: true
+        });
+
+        Helpers.userToken.get((SESSIONDATA)=> {
+          console.log(SESSIONDATA);
+          this.props.model.save({}, {
+
+            headers: Helpers.setHeaders(SESSIONDATA),
+
+            success: (model)=> {
+              Helpers.userToken.saveUser(SESSIONDATA, model.attributes);
+              this.setState({
+                step: 2
+              });
+              this.hideLoadingMessage();
+            },
+
+            error: (model, error)=> {
+              console.log(error);
+              //@todo: Create an error view
+              this.hideLoadingMessage();
+            }
+          });
+
+          
+        });
+
+          
+        break;
+    }
   }
 
   onOk() {
@@ -125,6 +191,12 @@ export default class User extends React.Component {
     }
   }
 
+  hideLoadingMessage() {
+    this.setState({
+      showMessage: false,
+      isSaving: false
+    });
+  }
 
   showLoadingMessage() {
     return(
@@ -133,6 +205,51 @@ export default class User extends React.Component {
         MessageContent={'Yes! Een moment aub.'}
         MessageHeader={'GEGEVENS BEWAREN!'}/>
     );
+  }
+
+  upLoadPic() {
+    var options = {
+  title: 'Select Avatar', // specify null or empty string to remove the title
+  cancelButtonTitle: 'Cancel',
+  takePhotoButtonTitle: 'Take Photo...', // specify null or empty string to remove this button
+  chooseFromLibraryButtonTitle: 'Choose from Library...', // specify null or empty string to remove this button
+  customButtons: {
+    'Choose Photo from Facebook': 'fb', // [Button Text] : [String returned upon selection]
+  },
+  maxWidth: 300,
+  maxHeight: 300,
+  quality: 0.4,
+  allowsEditing: false, // Built in iOS functionality to resize/reposition the image
+  noData: false, // Disables the base64 `data` field from being generated (greatly improves performance on large photos)
+  storageOptions: { // if this key is provided, the image will get saved in the documents directory (rather than a temporary directory)
+    skipBackup: true, // image will NOT be backed up to icloud
+    path: 'images' // will save image at /Documents/images rather than the root
+  }
+};
+
+UIImagePickerManager.showImagePicker(options, (didCancel, response) => {
+  console.log('Response = ', response);
+
+  if (didCancel) {
+    console.log('User cancelled image picker');
+  }
+  else {
+    if (response.customButton) {
+      console.log('User tapped custom button: ', response.customButton);
+    }
+    else {
+      // You can display the image using either:
+      const source = {uri: 'data:image/jpeg;base64,' + response.data, isStatic: true};
+      console.log(source);
+      const sourceother = {uri: response.uri.replace('file://', ''), isStatic: true};
+      console.log(sourceother);
+      this.setState({
+        avatarSource: sourceother,
+      });
+    }
+  }
+});
+    //console.log(CameraRoll.getPhotos);
   }
 
   stepForm() {
@@ -147,6 +264,7 @@ export default class User extends React.Component {
               
               <TxtInput
                 type={'email-address'}
+                key='email'
                 onChange={(e)=> { 
                   this.props.model.set({
                       email: e.text
@@ -162,6 +280,7 @@ export default class User extends React.Component {
 
               <TxtInput
                 type={'password'}
+                key='password'
                 onChange={(e)=> {
 
                   this.props.model.set({
@@ -199,22 +318,62 @@ export default class User extends React.Component {
               
               <TxtInput
                 type={'default'}
+                key='username'
                 onChange={(e)=> { 
                   this.props.model.set({
-                      name: e.text
+                      name: e.text,
+                      field_naame: e.text
                   });
                   this.setState({ 
                     validated: e ? e.validated : false
                   });
                 }}
-                value={this.props.model.get('name')}
+                value={this.state.username}
                 placeholder={'Gebruikersnaam'}/>
 
             </View>
           );
         }
 
+      },
+
+      {
+        render: ()=> {
+          return (
+            <View>
+              <Text style={[ DEFCSS.sansc, styles.title ]}>JOUW FOTO OF LOGO</Text>
+              <Text style={[ DEFCSS.sansc, styles.title, styles.subTitle ]}>Een foto toevoegen aan jouw profiel</Text>
+              {()=> {
+
+                if (this.state.avatarSource) {
+                  return (
+                    <TouchableOpacity onPress={() => { this.upLoadPic() }}>
+                      <Image resizeMode={'contain'} style={[styles.image]} source={{uri: this.state.avatarSource.uri }} />
+                    </TouchableOpacity>
+                  );
+                } else {
+                  return (
+                    <TouchableOpacity onPress={() => { this.upLoadPic() }}>
+                      <View style={[styles.image]}>
+                        <Icon
+                          name='fontawesome|camera-retro'
+                          size={30}
+                          color={Settings.colors.pink}
+                          style={[styles.cameraIcon]} />
+                      </View>
+                    </TouchableOpacity>
+                  );
+                }
+              }()}
+              
+
+            </View>
+          );
+        }
+
       }
+
+
     ];
   }
 
@@ -265,7 +424,9 @@ export default class User extends React.Component {
             if (this.state.isSaving) {
               return this.showLoadingMessage();
             } else {
-              return this.stepForm()[this.state.step].messages();  
+              if (this.stepForm()[this.state.step].messages) {
+                return this.stepForm()[this.state.step].messages();
+              }
             }
           }
         }()}
@@ -283,6 +444,22 @@ var styles = StyleSheet.create({
     top: 0,
     bottom: 0,
     right: 0
+  },
+  image: {
+    width: 150,
+    height: 150,
+    borderRadius: 75,
+    alignSelf: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    margin: 10,
+    borderColor: Settings.colors.darkPink,
+    borderWidth: 1
+  },
+  cameraIcon: {
+    width: 30,
+    height: 30
   },
   largeBtn: {
     flex: 1,

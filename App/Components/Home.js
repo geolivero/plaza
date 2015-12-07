@@ -172,6 +172,8 @@ var home = React.createClass({
     if (Platform.OS === 'ios') {
         StatusBarIOS.setStyle('light-content');
     }
+
+    //Helpers.userToken.destroy();
     
     this.fetchCollection();
     //To cancel the arrow animation
@@ -180,10 +182,69 @@ var home = React.createClass({
       this.refs.bakerHeader.measure(this.getBakerHeaderPos);
     }, 1);
 
+    /*Helpers.getToken((token)=> {
+      fetch('http://cakesplaza/users/mnguser/1798', {
+        method: 'PUT',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': 'l5pTqm-k3SmTvmCYfH0c_cRI8Xjqu8vz43sy2uzrWg4',
+          'Authorization': 'SESSe9eab616218dc47e56c8af2fff93fe5d:xsjrzsSkDCG1bocfZBUmMXIv-c9pW4mTVQCdOhv_S9Q'
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+          "name":"Cakery"
+        })
+      })
+      .then((response) => {
+        if (response.status >= 200 && response.status < 300) {  
+          return Promise.resolve(response)  
+        } else {  
+          console.log(response);
+          return Promise.reject(new Error(JSON.parse(response._bodyText)))  
+        }
+      })
+      .then((response) => response.json())
+      .then((responseText) => {
+        console.log(responseText);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    });
+*/
+
+   /* Helpers.getToken((token)=> {
+      fetch('http://cakesplaza/users/user/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': token,
+        },
+        body: JSON.stringify({
+          username: 'Cakeruker',
+          password: 'test1234'
+        })
+      })
+      .then((response) => response.json())
+      .then((responseText) => {
+        console.log(responseText);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    });
+*/
+
     /// DELETE
     /// 
     /// 
     /// 
+    /// 
+    
+    //Helpers.userToken.destroy();
     /*Helpers.getToken((token)=> {
 
       console.log();

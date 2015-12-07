@@ -1,36 +1,24 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-'use strict';
 
 var React = require('react-native');
+var Home = require('./App/Components/Home');
+var BakersProfile = require('./App/Components/Bakersprofile');
+var Dimensions = require('Dimensions');
+var windowSize = Dimensions.get('window');
+var PicturePopup = require('./App/Components/Widgets/PicturePopup');
 var {
   AppRegistry,
   StyleSheet,
-  Text,
+  Navigator,
   View,
+  TouchableOpacity,
+  Text,
+  NavigatorIOS
 } = React;
 
-var plaza = React.createClass({
-  render: function() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
-});
-
 var styles = StyleSheet.create({
+  navContainer: {
+    flex: 1
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -41,12 +29,73 @@ var styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    color: 'white',
+  }
 });
 
-AppRegistry.registerComponent('plaza', () => plaza);
+
+var Dimensions = require('Dimensions');
+var PixelRatio = require('PixelRatio');
+var buildStyleInterpolator = require('buildStyleInterpolator');
+var FlatFloatFromRight = Object.assign({}, Navigator.SceneConfigs.FloatFromRight);
+var FlatFadeToTheLeft = {
+  transformTranslate: {
+    from: {x: 0, y: 0, z: 0},
+    to: {x: -Math.round(Dimensions.get('window').width * 0.3), y: 0, z: 0},
+    min: 0,
+    max: 1,
+    type: 'linear',
+    extrapolate: true,
+    round: PixelRatio.get(),
+  },
+  opacity: {
+    from: 1,
+    to: 1,
+    min: 0,
+    max: 1,
+    type: 'linear',
+    extrapolate: false,
+    round: 100,
+  },
+  translateX: {
+    from: 0,
+    to: -Math.round(Dimensions.get('window').width * 0.3),
+    min: 0,
+    max: 1,
+    type: 'linear',
+    extrapolate: true,
+    round: PixelRatio.get(),
+  },
+};
+FlatFloatFromRight.animationInterpolators.out = buildStyleInterpolator(FlatFadeToTheLeft);
+
+var CP = React.createClass({
+  renderScene(route, nav) {
+    switch(route.id) {
+      case 'home':
+        return <Home navigator={nav} />
+      break;
+      case 'bakersprofile':
+        return <BakersProfile model={route.model} navigator={nav} />
+      break;
+      case 'bakersgalerie':
+        return <PicturePopup onClose={route.onClose} imgURL={route.imgURL} navigator={nav} />
+      break;
+    }
+  },
+  configureScene() {
+    return FlatFloatFromRight;
+  },
+
+  render() {
+    return (
+      <Navigator
+        style={styles.navContainer}
+        initialRoute={{id: 'home'}}
+        configureScene={this.configureScene}
+        renderScene={this.renderScene} />
+    );
+  }
+
+});
+AppRegistry.registerComponent('cakesplaza', () => CP);

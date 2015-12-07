@@ -60,6 +60,7 @@
 		BE9CB2101C0172B50051377A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CB20F1C0172B50051377A /* libc++.tbd */; };
 		BE9CB2121C0172C00051377A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CB2111C0172C00051377A /* libsqlite3.tbd */; };
 		BE9CB2141C0172CB0051377A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9CB2131C0172CB0051377A /* libz.tbd */; };
+		BEC707F01C14BC1100359E7F /* UIImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC707EF1C14BC1100359E7F /* UIImagePickerManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +224,8 @@
 		BE9CB20F1C0172B50051377A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		BE9CB2111C0172C00051377A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		BE9CB2131C0172CB0051377A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		BEC707EE1C14BC1100359E7F /* UIImagePickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImagePickerManager.h; sourceTree = "<group>"; };
+		BEC707EF1C14BC1100359E7F /* UIImagePickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImagePickerManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +377,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BEC707ED1C14BC1100359E7F /* UIImagePickerManager */,
 				BE9CB1F51C0171A80051377A /* RCTMapboxGL.xcodeproj */,
 				BE9CB1BB1C013DA80051377A /* ReactNativeIcons.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -466,6 +470,15 @@
 				BE9CB1FD1C0171A80051377A /* RCTMapboxGLTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BEC707ED1C14BC1100359E7F /* UIImagePickerManager */ = {
+			isa = PBXGroup;
+			children = (
+				BEC707EE1C14BC1100359E7F /* UIImagePickerManager.h */,
+				BEC707EF1C14BC1100359E7F /* UIImagePickerManager.m */,
+			);
+			path = UIImagePickerManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -763,6 +776,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				BEC707F01C14BC1100359E7F /* UIImagePickerManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
