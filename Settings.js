@@ -27,8 +27,8 @@ module.exports.box = {
 module.exports.mapToken = 'sk.eyJ1IjoiZ2VvbGl2ZXJvIiwiYSI6ImNpZ2ZveGVqYjBza2N2d2tyNnF1bzRzcDEifQ.Dv7zNPmn7jTdEpthtKZnfA';
 
 module.exports.adobessdk = {
-  secret = ' 46e86c84-a93e-4da7-94e4-7c4138a3408d',
-  clientid = '5fd2ef1c76f941cfa6f1880ed2f2cfd3'
+  secret: ' 46e86c84-a93e-4da7-94e4-7c4138a3408d',
+  clientid: '5fd2ef1c76f941cfa6f1880ed2f2cfd3'
 };
 
 module.exports.REST = {

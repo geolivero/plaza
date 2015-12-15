@@ -22,6 +22,22 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		BE0B3C8D1C1F5D4700A6A659 /* FileUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0B3C8C1C1F5D4700A6A659 /* FileUpload.m */; };
+		BE1EFF471C1C6626008798E1 /* AdobeCreativeSDKCoreResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE1EFF461C1C6626008798E1 /* AdobeCreativeSDKCoreResources.bundle */; };
+		BE1EFF491C1C664B008798E1 /* AdobeCreativeSDKImageResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE1EFF481C1C664B008798E1 /* AdobeCreativeSDKImageResources.bundle */; };
+		BE1EFF4B1C1C67A3008798E1 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1EFF4A1C1C67A3008798E1 /* AdobeCreativeSDKCore.framework */; };
+		BE1EFF4D1C1C6CB4008798E1 /* AdobeCreativeSDKImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1EFF4C1C1C6CB4008798E1 /* AdobeCreativeSDKImage.framework */; };
+		BE1EFF4F1C1C6CE9008798E1 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1EFF4E1C1C6CE8008798E1 /* Accelerate.framework */; };
+		BE1EFF511C1C6CF7008798E1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1EFF501C1C6CF7008798E1 /* CoreData.framework */; };
+		BE1EFF531C1C6D47008798E1 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1EFF521C1C6D47008798E1 /* libsqlite3.0.tbd */; };
+		BE1EFF551C1C6D50008798E1 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1EFF541C1C6D50008798E1 /* libz.1.2.5.tbd */; };
+		BE1EFF571C1C6D5B008798E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1EFF561C1C6D5B008798E1 /* Foundation.framework */; };
+		BE1EFF591C1C6D63008798E1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1EFF581C1C6D63008798E1 /* MessageUI.framework */; };
+		BE1EFF5B1C1C6D6D008798E1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1EFF5A1C1C6D6D008798E1 /* OpenGLES.framework */; };
+		BE1EFF5D1C1C6D85008798E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1EFF5C1C1C6D85008798E1 /* StoreKit.framework */; };
+		BE1EFF5F1C1C6D96008798E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1EFF5E1C1C6D95008798E1 /* UIKit.framework */; };
+		BE41DD951C1CE3F80022F3DC /* ImageEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = BE41DD941C1CE3F80022F3DC /* ImageEditor.m */; };
+		BE41DD991C1D8FC60022F3DC /* UIReactAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = BE41DD981C1D8FC60022F3DC /* UIReactAlert.m */; };
 		BE9CB1AD1C013D0E0051377A /* Allura-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE9CB1A91C013D0E0051377A /* Allura-Regular.ttf */; };
 		BE9CB1AE1C013D0E0051377A /* OpenSans-CondensedLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE9CB1AA1C013D0E0051377A /* OpenSans-CondensedLight.ttf */; };
 		BE9CB1AF1C013D0E0051377A /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE9CB1AB1C013D0E0051377A /* OpenSans-Light.ttf */; };
@@ -186,6 +202,24 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		BE0B3C8C1C1F5D4700A6A659 /* FileUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileUpload.m; path = "../node_modules/react-native-fileupload/FileUpload.m"; sourceTree = "<group>"; };
+		BE1EFF461C1C6626008798E1 /* AdobeCreativeSDKCoreResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCoreResources.bundle; path = ../../adobecreativesdk/AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework/Versions/A/Resources/AdobeCreativeSDKCoreResources.bundle; sourceTree = "<group>"; };
+		BE1EFF481C1C664B008798E1 /* AdobeCreativeSDKImageResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKImageResources.bundle; path = ../../adobecreativesdk/AdobeCreativeSDKFrameworks/AdobeCreativeSDKImage.framework/Versions/A/Resources/AdobeCreativeSDKImageResources.bundle; sourceTree = "<group>"; };
+		BE1EFF4A1C1C67A3008798E1 /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../../adobecreativesdk/AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
+		BE1EFF4C1C1C6CB4008798E1 /* AdobeCreativeSDKImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKImage.framework; path = ../../adobecreativesdk/AdobeCreativeSDKFrameworks/AdobeCreativeSDKImage.framework; sourceTree = "<group>"; };
+		BE1EFF4E1C1C6CE8008798E1 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		BE1EFF501C1C6CF7008798E1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BE1EFF521C1C6D47008798E1 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		BE1EFF541C1C6D50008798E1 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		BE1EFF561C1C6D5B008798E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BE1EFF581C1C6D63008798E1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		BE1EFF5A1C1C6D6D008798E1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		BE1EFF5C1C1C6D85008798E1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		BE1EFF5E1C1C6D95008798E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BE41DD931C1CE3F80022F3DC /* ImageEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditor.h; sourceTree = "<group>"; };
+		BE41DD941C1CE3F80022F3DC /* ImageEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditor.m; sourceTree = "<group>"; };
+		BE41DD971C1D8FC60022F3DC /* UIReactAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIReactAlert.h; sourceTree = "<group>"; };
+		BE41DD981C1D8FC60022F3DC /* UIReactAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIReactAlert.m; sourceTree = "<group>"; };
 		BE9CB1A91C013D0E0051377A /* Allura-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Allura-Regular.ttf"; sourceTree = "<group>"; };
 		BE9CB1AA1C013D0E0051377A /* OpenSans-CondensedLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-CondensedLight.ttf"; sourceTree = "<group>"; };
 		BE9CB1AB1C013D0E0051377A /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
@@ -240,12 +274,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1EFF5F1C1C6D96008798E1 /* UIKit.framework in Frameworks */,
+				BE9CB20A1C0172940051377A /* MobileCoreServices.framework in Frameworks */,
+				BE1EFF5D1C1C6D85008798E1 /* StoreKit.framework in Frameworks */,
+				BE9CB20C1C0172A00051377A /* QuartzCore.framework in Frameworks */,
+				BE1EFF5B1C1C6D6D008798E1 /* OpenGLES.framework in Frameworks */,
+				BE1EFF591C1C6D63008798E1 /* MessageUI.framework in Frameworks */,
+				BE1EFF571C1C6D5B008798E1 /* Foundation.framework in Frameworks */,
+				BE1EFF551C1C6D50008798E1 /* libz.1.2.5.tbd in Frameworks */,
+				BE1EFF531C1C6D47008798E1 /* libsqlite3.0.tbd in Frameworks */,
+				BE1EFF511C1C6CF7008798E1 /* CoreData.framework in Frameworks */,
+				BE1EFF4F1C1C6CE9008798E1 /* Accelerate.framework in Frameworks */,
+				BE1EFF4D1C1C6CB4008798E1 /* AdobeCreativeSDKImage.framework in Frameworks */,
+				BE1EFF4B1C1C67A3008798E1 /* AdobeCreativeSDKCore.framework in Frameworks */,
 				BE9CB2141C0172CB0051377A /* libz.tbd in Frameworks */,
 				BE9CB2121C0172C00051377A /* libsqlite3.tbd in Frameworks */,
 				BE9CB2101C0172B50051377A /* libc++.tbd in Frameworks */,
 				BE9CB20E1C0172A90051377A /* SystemConfiguration.framework in Frameworks */,
-				BE9CB20C1C0172A00051377A /* QuartzCore.framework in Frameworks */,
-				BE9CB20A1C0172940051377A /* MobileCoreServices.framework in Frameworks */,
 				BE9CB2081C01728D0051377A /* ImageIO.framework in Frameworks */,
 				BE9CB2061C0172850051377A /* GLKit.framework in Frameworks */,
 				BE9CB2041C01727C0051377A /* CoreTelephony.framework in Frameworks */,
@@ -377,6 +422,47 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BE0B3C8C1C1F5D4700A6A659 /* FileUpload.m */,
+				BE41DD961C1D8F370022F3DC /* UIReactAlert */,
+				BE41DD921C1CE3F80022F3DC /* ImageEditor */,
+				BE1EFF5E1C1C6D95008798E1 /* UIKit.framework */,
+				BE1EFF5C1C1C6D85008798E1 /* StoreKit.framework */,
+				BE1EFF5A1C1C6D6D008798E1 /* OpenGLES.framework */,
+				BE1EFF581C1C6D63008798E1 /* MessageUI.framework */,
+				BE1EFF561C1C6D5B008798E1 /* Foundation.framework */,
+				BE1EFF541C1C6D50008798E1 /* libz.1.2.5.tbd */,
+				BE1EFF521C1C6D47008798E1 /* libsqlite3.0.tbd */,
+				BE1EFF501C1C6CF7008798E1 /* CoreData.framework */,
+				BE1EFF4E1C1C6CE8008798E1 /* Accelerate.framework */,
+				BE1EFF4C1C1C6CB4008798E1 /* AdobeCreativeSDKImage.framework */,
+				BE1EFF4A1C1C67A3008798E1 /* AdobeCreativeSDKCore.framework */,
+				BE1EFF481C1C664B008798E1 /* AdobeCreativeSDKImageResources.bundle */,
+				BE1EFF461C1C6626008798E1 /* AdobeCreativeSDKCoreResources.bundle */,
+				BE9CB2131C0172CB0051377A /* libz.tbd */,
+				BE9CB2111C0172C00051377A /* libsqlite3.tbd */,
+				BE9CB20F1C0172B50051377A /* libc++.tbd */,
+				BE9CB20D1C0172A90051377A /* SystemConfiguration.framework */,
+				BE9CB20B1C0172A00051377A /* QuartzCore.framework */,
+				BE9CB2091C0172940051377A /* MobileCoreServices.framework */,
+				BE9CB2071C01728D0051377A /* ImageIO.framework */,
+				BE9CB2051C0172850051377A /* GLKit.framework */,
+				BE9CB2031C01727C0051377A /* CoreTelephony.framework */,
+				BE9CB2011C01725E0051377A /* Settings.bundle */,
+				BE9CB1FF1C0172270051377A /* Mapbox.bundle */,
+				BE9CB1C21C013E100051377A /* FAKFontAwesome.h */,
+				BE9CB1C31C013E100051377A /* FAKFontAwesome.m */,
+				BE9CB1C41C013E100051377A /* FAKFoundationIcons.h */,
+				BE9CB1C51C013E100051377A /* FAKFoundationIcons.m */,
+				BE9CB1C61C013E100051377A /* FAKIcon.h */,
+				BE9CB1C71C013E100051377A /* FAKIcon.m */,
+				BE9CB1C81C013E100051377A /* FAKIonIcons.h */,
+				BE9CB1C91C013E100051377A /* FAKIonIcons.m */,
+				BE9CB1CA1C013E100051377A /* FAKMaterial.h */,
+				BE9CB1CB1C013E100051377A /* FAKMaterial.m */,
+				BE9CB1CC1C013E100051377A /* FAKOcticons.h */,
+				BE9CB1CD1C013E100051377A /* FAKOcticons.m */,
+				BE9CB1CE1C013E100051377A /* FAKZocial.h */,
+				BE9CB1CF1C013E100051377A /* FAKZocial.m */,
 				BEC707ED1C14BC1100359E7F /* UIImagePickerManager */,
 				BE9CB1F51C0171A80051377A /* RCTMapboxGL.xcodeproj */,
 				BE9CB1BB1C013DA80051377A /* ReactNativeIcons.xcodeproj */,
@@ -405,38 +491,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				BE9CB2131C0172CB0051377A /* libz.tbd */,
-				BE9CB2111C0172C00051377A /* libsqlite3.tbd */,
-				BE9CB20F1C0172B50051377A /* libc++.tbd */,
-				BE9CB20D1C0172A90051377A /* SystemConfiguration.framework */,
-				BE9CB20B1C0172A00051377A /* QuartzCore.framework */,
-				BE9CB2091C0172940051377A /* MobileCoreServices.framework */,
-				BE9CB2071C01728D0051377A /* ImageIO.framework */,
-				BE9CB2051C0172850051377A /* GLKit.framework */,
-				BE9CB2031C01727C0051377A /* CoreTelephony.framework */,
-				BE9CB2011C01725E0051377A /* Settings.bundle */,
-				BE9CB1FF1C0172270051377A /* Mapbox.bundle */,
-				BE9CB1C21C013E100051377A /* FAKFontAwesome.h */,
-				BE9CB1C31C013E100051377A /* FAKFontAwesome.m */,
-				BE9CB1C41C013E100051377A /* FAKFoundationIcons.h */,
-				BE9CB1C51C013E100051377A /* FAKFoundationIcons.m */,
-				BE9CB1C61C013E100051377A /* FAKIcon.h */,
-				BE9CB1C71C013E100051377A /* FAKIcon.m */,
-				BE9CB1C81C013E100051377A /* FAKIonIcons.h */,
-				BE9CB1C91C013E100051377A /* FAKIonIcons.m */,
-				BE9CB1CA1C013E100051377A /* FAKMaterial.h */,
-				BE9CB1CB1C013E100051377A /* FAKMaterial.m */,
-				BE9CB1CC1C013E100051377A /* FAKOcticons.h */,
-				BE9CB1CD1C013E100051377A /* FAKOcticons.m */,
-				BE9CB1CE1C013E100051377A /* FAKZocial.h */,
-				BE9CB1CF1C013E100051377A /* FAKZocial.m */,
-				BE9CB1D01C013E100051377A /* FontAwesome.otf */,
-				BE9CB1D11C013E100051377A /* FontAwesomeKit.h */,
-				BE9CB1D21C013E100051377A /* foundation-icons.ttf */,
-				BE9CB1D31C013E100051377A /* ionicons.ttf */,
-				BE9CB1D41C013E100051377A /* Material-Design-Iconic-Font.ttf */,
-				BE9CB1D51C013E100051377A /* octicons.ttf */,
-				BE9CB1D61C013E100051377A /* zocial-regular-webfont.ttf */,
+				BE1EFF601C1C6E69008798E1 /* fonts */,
 				13B07FAE1A68108700A75B9A /* plaza */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* plazaTests */,
@@ -453,6 +508,38 @@
 				00E356EE1AD99517003FC87E /* plazaTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BE1EFF601C1C6E69008798E1 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BE9CB1D01C013E100051377A /* FontAwesome.otf */,
+				BE9CB1D11C013E100051377A /* FontAwesomeKit.h */,
+				BE9CB1D21C013E100051377A /* foundation-icons.ttf */,
+				BE9CB1D31C013E100051377A /* ionicons.ttf */,
+				BE9CB1D41C013E100051377A /* Material-Design-Iconic-Font.ttf */,
+				BE9CB1D51C013E100051377A /* octicons.ttf */,
+				BE9CB1D61C013E100051377A /* zocial-regular-webfont.ttf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
+		BE41DD921C1CE3F80022F3DC /* ImageEditor */ = {
+			isa = PBXGroup;
+			children = (
+				BE41DD931C1CE3F80022F3DC /* ImageEditor.h */,
+				BE41DD941C1CE3F80022F3DC /* ImageEditor.m */,
+			);
+			path = ImageEditor;
+			sourceTree = "<group>";
+		};
+		BE41DD961C1D8F370022F3DC /* UIReactAlert */ = {
+			isa = PBXGroup;
+			children = (
+				BE41DD971C1D8FC60022F3DC /* UIReactAlert.h */,
+				BE41DD981C1D8FC60022F3DC /* UIReactAlert.m */,
+			);
+			name = UIReactAlert;
 			sourceTree = "<group>";
 		};
 		BE9CB1BC1C013DA80051377A /* Products */ = {
@@ -710,6 +797,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1EFF491C1C664B008798E1 /* AdobeCreativeSDKImageResources.bundle in Resources */,
+				BE1EFF471C1C6626008798E1 /* AdobeCreativeSDKCoreResources.bundle in Resources */,
 				BE9CB2021C01725E0051377A /* Settings.bundle in Resources */,
 				BE9CB2001C0172270051377A /* Mapbox.bundle in Resources */,
 				BE9CB1D71C013E100051377A /* FAKFontAwesome.h in Resources */,
@@ -774,9 +863,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0B3C8D1C1F5D4700A6A659 /* FileUpload.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				BE41DD951C1CE3F80022F3DC /* ImageEditor.m in Sources */,
 				BEC707F01C14BC1100359E7F /* UIImagePickerManager.m in Sources */,
+				BE41DD991C1D8FC60022F3DC /* UIReactAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +937,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEAD_CODE_STRIPPING = NO;
+				FRAMEWORK_SEARCH_PATHS = /Users/contact/Sites/projecten/mobile/adobecreativesdk/AdobeCreativeSDKFrameworks;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -861,6 +954,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = /Users/contact/Sites/projecten/mobile/adobecreativesdk/AdobeCreativeSDKFrameworks;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

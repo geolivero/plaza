@@ -7,7 +7,8 @@ import Settings from './../../../Settings';
 import { Icon, } from 'react-native-icons';
 import TxtInput from './../Forms/Fields/TxtInput';
 import Messages from './../Widgets/Message';
-import { UIImagePickerManager, } from 'NativeModules';
+import { UIImagePickerManager, FileUpload } from 'NativeModules';
+import ProfileAssets from '././../UI/ProfileAssets';
 
 
 var {
@@ -19,6 +20,7 @@ var {
   TouchableHighlight,
   TextInput,
   Animated,
+  AlertIOS,
   TouchableOpacity,
   CameraRoll,
   ScrollView
@@ -33,7 +35,6 @@ export default class User extends React.Component {
       shiftUp: new Animated.Value(Settings.box.height),
       text: '',
       step: 0,
-      avatarSource: false,
       username: this.props.model.get('name') || '',
       allowed: false,
       emailText: '',
@@ -58,12 +59,17 @@ export default class User extends React.Component {
         this.props.model.set(SESSIONDATA.user);
 
         this.setState({
-          username: this.props.model.get('name'),
-          step: 1
+          username: this.props.model.get('name')
         });
       }
     });
 
+    Helpers.userStep.get((STEP)=> {
+      console.log(STEP);
+      this.setState({
+        step: STEP ? parseInt(STEP) : 1
+      });
+    });
   }
 
   onModelChange(model) {
@@ -98,10 +104,13 @@ export default class User extends React.Component {
   }
 
   onSuccess() {
+    var step = parseInt(this.state.step) + 1;
     this.setState({
       showMessage: false,
-      step: this.state.step + 1
+      step: step
     });
+
+    Helpers.userStep.save(step);
   }
 
   saveData() {
@@ -147,28 +156,47 @@ export default class User extends React.Component {
           isSaving: true
         });
 
+
         Helpers.userToken.get((SESSIONDATA)=> {
+          var fileName = this.props.model.get('name').replace(/\s/g, '') + '_avatar.jpg';
           console.log(SESSIONDATA);
-          this.props.model.save({}, {
+          console.log(this.props.model);
 
-            headers: Helpers.setHeaders(SESSIONDATA),
 
-            success: (model)=> {
-              Helpers.userToken.saveUser(SESSIONDATA, model.attributes);
-              this.setState({
-                step: 2
-              });
-              this.hideLoadingMessage();
-            },
+          if (this.props.model.get('type') === 'userFoto') {
 
-            error: (model, error)=> {
-              console.log(error);
-              //@todo: Create an error view
-              this.hideLoadingMessage();
-            }
-          });
+            FileUpload.upload(Helpers.setFileOptions(SESSIONDATA, {
+              files: {
+                name: [
+                  {
+                    filename: this.props.model.get('filename') + '.jpg',
+                    filepath: this.props.model.get('file'),
+                    filetype: 'image/jpeg', 
+                  }
+                ]
+              }
+            }), (err, result) => {
+                console.log('upload:', err, result);
+            });
 
-          
+          } else {
+            this.props.model.save({}, {
+
+              headers: Helpers.setHeaders(SESSIONDATA),
+
+              success: (model)=> {
+                Helpers.userToken.saveUser(SESSIONDATA, model.attributes);
+                this.onSuccess();
+                this.hideLoadingMessage();
+              },
+
+              error: (model, error)=> {
+                console.log(error);
+                //@todo: Create an error view
+                this.hideLoadingMessage();
+              }
+            });
+          }          
         });
 
           
@@ -191,6 +219,11 @@ export default class User extends React.Component {
     }
   }
 
+  onAvatarReady(source) {
+    console.log(source);
+
+  }
+
   hideLoadingMessage() {
     this.setState({
       showMessage: false,
@@ -207,50 +240,7 @@ export default class User extends React.Component {
     );
   }
 
-  upLoadPic() {
-    var options = {
-  title: 'Select Avatar', // specify null or empty string to remove the title
-  cancelButtonTitle: 'Cancel',
-  takePhotoButtonTitle: 'Take Photo...', // specify null or empty string to remove this button
-  chooseFromLibraryButtonTitle: 'Choose from Library...', // specify null or empty string to remove this button
-  customButtons: {
-    'Choose Photo from Facebook': 'fb', // [Button Text] : [String returned upon selection]
-  },
-  maxWidth: 300,
-  maxHeight: 300,
-  quality: 0.4,
-  allowsEditing: false, // Built in iOS functionality to resize/reposition the image
-  noData: false, // Disables the base64 `data` field from being generated (greatly improves performance on large photos)
-  storageOptions: { // if this key is provided, the image will get saved in the documents directory (rather than a temporary directory)
-    skipBackup: true, // image will NOT be backed up to icloud
-    path: 'images' // will save image at /Documents/images rather than the root
-  }
-};
-
-UIImagePickerManager.showImagePicker(options, (didCancel, response) => {
-  console.log('Response = ', response);
-
-  if (didCancel) {
-    console.log('User cancelled image picker');
-  }
-  else {
-    if (response.customButton) {
-      console.log('User tapped custom button: ', response.customButton);
-    }
-    else {
-      // You can display the image using either:
-      const source = {uri: 'data:image/jpeg;base64,' + response.data, isStatic: true};
-      console.log(source);
-      const sourceother = {uri: response.uri.replace('file://', ''), isStatic: true};
-      console.log(sourceother);
-      this.setState({
-        avatarSource: sourceother,
-      });
-    }
-  }
-});
-    //console.log(CameraRoll.getPhotos);
-  }
+  
 
   stepForm() {
     return [
@@ -321,8 +311,9 @@ UIImagePickerManager.showImagePicker(options, (didCancel, response) => {
                 key='username'
                 onChange={(e)=> { 
                   this.props.model.set({
+                      type: 'username',
                       name: e.text,
-                      field_naame: e.text
+                      field_name: e.text
                   });
                   this.setState({ 
                     validated: e ? e.validated : false
@@ -343,30 +334,19 @@ UIImagePickerManager.showImagePicker(options, (didCancel, response) => {
             <View>
               <Text style={[ DEFCSS.sansc, styles.title ]}>JOUW FOTO OF LOGO</Text>
               <Text style={[ DEFCSS.sansc, styles.title, styles.subTitle ]}>Een foto toevoegen aan jouw profiel</Text>
-              {()=> {
+              <ProfileAssets 
+                type="avatar" 
+                onReady={(source)=> {
+                  
 
-                if (this.state.avatarSource) {
-                  return (
-                    <TouchableOpacity onPress={() => { this.upLoadPic() }}>
-                      <Image resizeMode={'contain'} style={[styles.image]} source={{uri: this.state.avatarSource.uri }} />
-                    </TouchableOpacity>
-                  );
-                } else {
-                  return (
-                    <TouchableOpacity onPress={() => { this.upLoadPic() }}>
-                      <View style={[styles.image]}>
-                        <Icon
-                          name='fontawesome|camera-retro'
-                          size={30}
-                          color={Settings.colors.pink}
-                          style={[styles.cameraIcon]} />
-                      </View>
-                    </TouchableOpacity>
-                  );
-                }
-              }()}
-              
 
+                  this.props.model.set({
+                    type: 'userFoto',
+                    filename: this.props.model.get('name').replace(/\s/g, '').toLowerCase() + '_logo',
+                    file: source.fileSource.uri
+                  });
+
+                }} />
             </View>
           );
         }

@@ -7,7 +7,9 @@ var {
 } = React;
 
 var userToken,
+  userRegisterSteps,
   ASYNCKEY = '@user:private',
+  STEPSKEY = '@user:steps',
   login,
   token;
 
@@ -46,6 +48,28 @@ userToken = {
   }
 };
 
+
+userRegisterSteps = {
+  save(step) {
+    console.log('step: ' + step);
+    AsyncStorage.setItem(STEPSKEY, step.toString());
+  },
+
+  destroy(cb) {
+    AsyncStorage.removeItem(STEPSKEY).
+      then(cb);
+  },
+
+  get(cb) {
+    AsyncStorage.getItem(STEPSKEY)
+    .then((value)=> {
+        cb(value);
+    })
+    .done();
+  }
+
+};
+
 token = function(callback) {
 
   userToken.get((session)=> {
@@ -64,6 +88,7 @@ token = function(callback) {
       });
     }
   });
+
 };
 
 
@@ -89,12 +114,30 @@ login = function (token, data, callback) {
   });
 };
 
+
+module.exports.userStep = userRegisterSteps;
 module.exports.userToken = userToken;
 module.exports.getToken = token;
 module.exports.login = login;
 module.exports.setHeaders = function (SESS) {
   return {
     'X-CSRF-Token': SESS.token,
-    'Authorization-key': SESS.sessionName + ':' + SESS.sessionId
+    'authorization-key': SESS.sessionName + ':' + SESS.sessionId
   };
+};
+
+module.exports.setFileOptions = function (SESS, files) {
+  return {
+    uploadUrl: Settings.REST.root + 'users/mnguser/create_raw',
+    method: 'POST', // default 'POST',support 'POST' and 'PUT'
+    headers: {
+      'Accept': 'application/json',
+      'X-CSRF-Token': SESS.token,
+      'Authorization-key': SESS.sessionName + ':' + SESS.sessionId
+    },
+    fields: {
+        'hello': 'world',
+    },
+    files: files
+  }
 };

@@ -7,6 +7,14 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:1.3.1'
 
+
+        compile fileTree(dir: 'libs', include: ['*.jar'])
+        compile 'com.android.support:appcompat-v7:23.0.0'
+        compile 'com.facebook.react:react-native:0.12.+'
+
+        // Add this line:
+        compile project(':react-native-fileupload')
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
