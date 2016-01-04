@@ -64,8 +64,7 @@ RCT_EXPORT_METHOD(showEditor:(NSDictionary *)params callback:(RCTResponseSenderB
 
 
 - (void)launchPhotoEditorWithImage:(UIImage*)source {
-  self.editorController = [[AdobeUXImageEditorViewController alloc] initWithImage:source];
-  self.editorController.delegate = self;
+  
   
   [AdobeImageEditorCustomization setToolOrder:@[kAdobeImageEditorCrop, kAdobeImageEditorColorAdjust,kAdobeImageEditorBlemish, kAdobeImageEditorEnhance]];
   [AdobeImageEditorCustomization setCropToolCustomEnabled:NO];
@@ -73,7 +72,12 @@ RCT_EXPORT_METHOD(showEditor:(NSDictionary *)params callback:(RCTResponseSenderB
   [AdobeImageEditorCustomization setCropToolOriginalEnabled:NO];
   
   UIViewController *root = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+  
   dispatch_async(dispatch_get_main_queue(), ^{
+    
+    self.editorController = [[AdobeUXImageEditorViewController alloc] initWithImage:source];
+    self.editorController.delegate = self;
+    
     [root presentViewController:self.editorController animated:YES completion:nil];
   });
 }

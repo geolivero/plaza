@@ -1,0 +1,2327 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dar",
+				"darkBrown	(User.js)"
+			],
+			[
+				"scroll",
+				"scrollView"
+			],
+			[
+				"dark",
+				"darkGray	(EditableBakeProduct.js)"
+			],
+			[
+				"col",
+				"column	(User.js)"
+			],
+			[
+				"light",
+				"lightGray	(EditableField.js)"
+			],
+			[
+				"rct",
+				"rctstyle	rctstyle"
+			],
+			[
+				"Ed",
+				"EditableBakeProduct	(EditableBakeProduct.js)"
+			],
+			[
+				"pic",
+				"pictureExist"
+			],
+			[
+				"Tou",
+				"TouchableOpacity"
+			],
+			[
+				"Text",
+				"TextInput"
+			],
+			[
+				"Tex",
+				"TextInput"
+			],
+			[
+				"align",
+				"alignItems	(User.js)"
+			],
+			[
+				"cul",
+				"column	(User.js)"
+			],
+			[
+				"sans",
+				"sansc"
+			],
+			[
+				"text",
+				"textAlign"
+			],
+			[
+				"place",
+				"placeholder	(User.js)"
+			],
+			[
+				"border",
+				"borderWidth"
+			],
+			[
+				"bord",
+				"borderColor"
+			],
+			[
+				"bo",
+				"borderWidth"
+			],
+			[
+				"Lis",
+				"ListPicker	(ListPicker.js)"
+			],
+			[
+				"addre",
+				"address"
+			],
+			[
+				"set",
+				"setState"
+			],
+			[
+				"sr",
+				"straat"
+			],
+			[
+				"Set",
+				"Settings"
+			],
+			[
+				"ligh",
+				"lightPink	(User.js)"
+			],
+			[
+				"Add",
+				"Address	(Address.js)"
+			],
+			[
+				"color",
+				"colors"
+			],
+			[
+				"cre",
+				"credentials	(User.js)"
+			],
+			[
+				"strin",
+				"stringify"
+			],
+			[
+				"arg",
+				"arguments"
+			],
+			[
+				"str",
+				"stringify	(Home.js)"
+			],
+			[
+				"user",
+				"userToken"
+			],
+			[
+				"logo",
+				"logo_small.png	w:70 h:69"
+			],
+			[
+				"sl",
+				"baker_slide_1.png	w:153 h:168"
+			],
+			[
+				"lo",
+				"loader_bar.png	w:640 h:11"
+			],
+			[
+				"under",
+				"underscore	(package.json)"
+			],
+			[
+				"back",
+				"backbonereactnative	(package.json)"
+			],
+			[
+				"ar",
+				"arrow_icon.png	w:19 h:54"
+			],
+			[
+				"searc",
+				"search_icon.png	w:22 h:21"
+			],
+			[
+				"get",
+				"getToken	(Helpers.js)"
+			],
+			[
+				"load",
+				"loaderBar"
+			],
+			[
+				"pass",
+				"passSwapper"
+			],
+			[
+				"passw",
+				"passwText"
+			],
+			[
+				"trans",
+				"transY"
+			],
+			[
+				"flex",
+				"flexDirection	(NewUser.js)"
+			],
+			[
+				"shift",
+				"shiftUp"
+			],
+			[
+				"Touch",
+				"TouchableHighlight"
+			],
+			[
+				"nati",
+				"nativeEvent	(Home.js)"
+			],
+			[
+				"child",
+				"children"
+			],
+			[
+				"right",
+				"rightbtn"
+			],
+			[
+				"is",
+				"isMap"
+			],
+			[
+				"window",
+				"windowSize"
+			],
+			[
+				"windo",
+				"windowSize"
+			],
+			[
+				"padding",
+				"paddingTop	(Bakersprofile.js)"
+			],
+			[
+				"coll",
+				"collection"
+			],
+			[
+				"parse",
+				"parseFloat〔function〕"
+			],
+			[
+				"letter",
+				"letter-spacing"
+			],
+			[
+				"backgr",
+				"background_tammy.png	w:1600 h:800"
+			],
+			[
+				"dat",
+				"data_type	(forms.js)"
+			],
+			[
+				"pos",
+				"pos-a	position: absolute;"
+			],
+			[
+				"create",
+				"createClass	(app.js)"
+			],
+			[
+				"rou",
+				"routes.js"
+			],
+			[
+				"z",
+				"z-in	z-index"
+			],
+			[
+				"fsi",
+				"font-size"
+			],
+			[
+				"in",
+				"inc	@include"
+			],
+			[
+				"lora",
+				"lora_m"
+			],
+			[
+				"inc",
+				"incl/"
+			],
+			[
+				"page",
+				"page_language"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"list-",
+				"list-style-image"
+			],
+			[
+				"logo_dark",
+				"logo_dark_nl.png	w:526 h:100"
+			],
+			[
+				"De",
+				"Details	(Details.js)"
+			],
+			[
+				"whi",
+				"whiteColor	(Default.js)"
+			],
+			[
+				"content",
+				"contentLoaded"
+			],
+			[
+				"clon",
+				"cloneWithRows	(Home.js)"
+			],
+			[
+				"fix",
+				"fixedTop"
+			],
+			[
+				"white",
+				"whiteBg"
+			],
+			[
+				"List",
+				"ListView"
+			],
+			[
+				"show",
+				"showBackBtn	(Home.js)"
+			],
+			[
+				"mIm",
+				"mImgTop"
+			],
+			[
+				"setTin",
+				"setInterval〔function〕"
+			],
+			[
+				"Home",
+				"Comp.Home.js"
+			],
+			[
+				"init",
+				"initial"
+			],
+			[
+				"crea",
+				"createClass	(Widget.Arrow.js)"
+			],
+			[
+				"subT",
+				"subTitleSize	(Comp.PinkHeaders.js)"
+			],
+			[
+				"win",
+				"windowSize"
+			],
+			[
+				"Style",
+				"StyleSheet"
+			],
+			[
+				"Sty",
+				"StylesDefault.js"
+			],
+			[
+				"creat",
+				"createAnimation	(profile.js)"
+			],
+			[
+				"fb",
+				"fb_bg.png	w:697 h:475"
+			],
+			[
+				"lau",
+				"layout/"
+			],
+			[
+				"font-s",
+				"font-style"
+			],
+			[
+				"list-style",
+				"list-style-type"
+			],
+			[
+				"translate",
+				"translateY"
+			],
+			[
+				"imp",
+				"impressie_bg.png	w:461 h:402"
+			],
+			[
+				"home",
+				"homepage_sport.png	w:919 h:556"
+			],
+			[
+				"updat",
+				"updatePic"
+			],
+			[
+				"background",
+				"backgroundImage"
+			],
+			[
+				"co",
+				"color_a"
+			],
+			[
+				"quo",
+				"quoteAdd"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"st",
+				"styles"
+			],
+			[
+				"file_def",
+				"file_default_scheme"
+			],
+			[
+				"file_validate_exten",
+				"file_validate_extensions"
+			],
+			[
+				"file_sa",
+				"file_save_upload"
+			],
+			[
+				"indei",
+				"indicator〔variable〕"
+			],
+			[
+				"Cake",
+				"CakeBizzClient"
+			],
+			[
+				"image_style",
+				"image_style_url	image_style_url"
+			],
+			[
+				"preproces",
+				"template_preprocess_page"
+			],
+			[
+				"clear",
+				"clearTimeout〔function〕"
+			],
+			[
+				"start",
+				"start_session"
+			],
+			[
+				"curr",
+				"currentTarget"
+			],
+			[
+				"use",
+				"use_sprite"
+			],
+			[
+				"tras",
+				"translateX"
+			],
+			[
+				"backgroun",
+				"background-position"
+			],
+			[
+				"cur",
+				"currentTarget"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"map",
+				"mapObj"
+			],
+			[
+				"tog",
+				"toggleTabs"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"roboto",
+				"roboto_light"
+			],
+			[
+				"robo",
+				"roboto_light"
+			],
+			[
+				"drupal_set",
+				"drupal_set_message	drupal_set_message"
+			],
+			[
+				"dia",
+				"diago_footer.svg"
+			],
+			[
+				"no",
+				"no-repeat  (value)"
+			],
+			[
+				"diag",
+				"diago_groenten.svg"
+			],
+			[
+				"backgrou",
+				"background"
+			],
+			[
+				"lin",
+				"line-height"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "App/Components/Forms/User.js",
+			"settings":
+			{
+				"buffer_size": 14418,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "App/Components/UI/EditableField.js",
+			"settings":
+			{
+				"buffer_size": 2346,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "App/Components/Widgets/EditableBakeProduct.js",
+			"settings":
+			{
+				"buffer_size": 2303,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Settings.js",
+			"settings":
+			{
+				"buffer_size": 820,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "App/Components/Forms/Fields/TxtInput.js",
+			"settings":
+			{
+				"buffer_size": 5686,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "App/Components/Bakersprofile.js",
+			"settings":
+			{
+				"buffer_size": 12554,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "App/Components/Home.js",
+			"settings":
+			{
+				"buffer_size": 11398,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/User/tishadow.sublime-build",
+					""
+				],
+				[
+					"Packages/User/tishadow.sublime-build",
+					"run"
+				],
+				[
+					"Packages/User/tishadow.sublime-build",
+					"update"
+				],
+				[
+					"Packages/User/tishadow.sublime-build",
+					"clear"
+				]
+			],
+			[
+				"Packages/User/tishadow.sublime-build",
+				"run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack re",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack rem",
+				"Package Control: Remove Channel"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"form",
+				"Format: Javascript"
+			],
+			[
+				"for",
+				"Format: Javascript"
+			],
+			[
+				"INs",
+				"Package Control: Install Package"
+			],
+			[
+				"specia",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"wrp",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wr",
+				"Word Wrap: Toggle"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"w",
+				"Word Wrap: Toggle"
+			],
+			[
+				"jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"javs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"sy",
+				"Set Syntax: PHP"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"hookm",
+				"Snippet: hook_menu"
+			],
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"fo",
+				"Format: Javascript"
+			],
+			[
+				"space",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"Backbone",
+				"Snippet: Backbone Collection"
+			],
+			[
+				"backbone",
+				"Snippet: Backbone Model"
+			],
+			[
+				"backn",
+				"Snippet: backbone-view"
+			],
+			[
+				"backb",
+				"Snippet: Backbone Router"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"hook_sc",
+				"Snippet: hook_schema"
+			],
+			[
+				"hook_ins",
+				"Snippet: hook_install"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"javsc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"trai",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"forma",
+				"Format: Javascript"
+			],
+			[
+				"tral",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"trali",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"html5",
+				"Snippet: html5"
+			],
+			[
+				"trail",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"speci",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"set  java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"set the",
+				"Snippet: hook_custom_theme"
+			],
+			[
+				"html",
+				"Set Syntax: HTML5"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"fom",
+				"Format: Javascript"
+			],
+			[
+				"jac",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"Backbo",
+				"Snippet: backbone-view"
+			],
+			[
+				"backbone rou",
+				"Snippet: Backbone Router"
+			],
+			[
+				"Backbone vie",
+				"Snippet: backbone-view"
+			],
+			[
+				"backbone coll",
+				"Snippet: backbone-collection"
+			],
+			[
+				"hook_servi",
+				"Snippet: hook_user_view"
+			],
+			[
+				"hook_per",
+				"Snippet: hook_permission"
+			],
+			[
+				"hook_menu",
+				"Snippet: hook_menu"
+			],
+			[
+				"tratrai",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"tra",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"hook_ini",
+				"Snippet: hook_init"
+			],
+			[
+				"hook_form",
+				"Snippet: hook_form_alter"
+			],
+			[
+				"hook_pre",
+				"Snippet: hook_preprocess"
+			],
+			[
+				"hook_block",
+				"Snippet: hook_block_view"
+			],
+			[
+				"hook_prep",
+				"Snippet: hook_preprocess"
+			],
+			[
+				"hook_libra",
+				"Snippet: hook_library"
+			],
+			[
+				"traili",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"hook_unin",
+				"Snippet: hook_uninstall"
+			],
+			[
+				"hook_inst",
+				"Snippet: hook_install"
+			],
+			[
+				"hook_token",
+				"Snippet: hook_token_info"
+			],
+			[
+				"hook_tokens",
+				"Snippet: hook_tokens"
+			],
+			[
+				"hook_",
+				"Snippet: hook_tokens($type,"
+			],
+			[
+				"trailin",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"alignm",
+				"AlignTab: Table Mode"
+			],
+			[
+				"hook_theme",
+				"Snippet: hook_theme_registry_alter"
+			],
+			[
+				"bac",
+				"Snippet: backbone-view"
+			],
+			[
+				"upgra",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"back",
+				"Snippet: backbone-view"
+			],
+			[
+				"",
+				"Bookmarks: Select Next"
+			],
+			[
+				"pack remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"packge rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"package remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"package re",
+				"Package Control: Remove Package"
+			],
+			[
+				"package ",
+				"Package Control: Remove Package"
+			],
+			[
+				"packe",
+				"Package Control: Remove Package"
+			],
+			[
+				"lint",
+				"Preferences: SublimeLinter Settings – Default"
+			],
+			[
+				"lint ",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"rmeove",
+				"Package Control: Remove Package"
+			],
+			[
+				"instll",
+				"Package Control: Install Package"
+			],
+			[
+				"instl",
+				"Package Control: Install Package"
+			],
+			[
+				"theme_form",
+				"Snippet: theme_form_element"
+			],
+			[
+				"theme_for",
+				"Snippet: theme_form"
+			],
+			[
+				"preproc",
+				"Snippet: hook_preprocess"
+			],
+			[
+				"hook_them",
+				"Snippet: hook_theme"
+			],
+			[
+				"hook_blok",
+				"Snippet: hook_block_info"
+			],
+			[
+				"wt",
+				"Word Wrap: Toggle"
+			],
+			[
+				"hook_men",
+				"Snippet: hook_menu_alter"
+			],
+			[
+				"Back",
+				"Snippet: Backbone Router"
+			],
+			[
+				"theme",
+				"Snippet: theme_breadcrumb"
+			],
+			[
+				"hook_the",
+				"Snippet: hook_theme"
+			],
+			[
+				"hook_blo",
+				"Snippet: hook_block_view"
+			],
+			[
+				"tidy",
+				"Tidy PHP"
+			],
+			[
+				"hook_preprocess",
+				"Snippet: hook_preprocess"
+			],
+			[
+				"hook_for",
+				"Snippet: hook_form_alter"
+			],
+			[
+				"preprocess",
+				"Snippet: hook_preprocess"
+			],
+			[
+				"Bac",
+				"Snippet: Backbone Model"
+			],
+			[
+				"BackB",
+				"Snippet: Backbone View"
+			],
+			[
+				"drupa",
+				"Goto Drupal API"
+			],
+			[
+				"fetch",
+				"Fetch: File"
+			],
+			[
+				"fetc",
+				"Fetch: Manage"
+			],
+			[
+				"BAck",
+				"Snippet: Backbone Router"
+			],
+			[
+				"hook_th",
+				"Snippet: hook_theme"
+			],
+			[
+				"hook_pe",
+				"Snippet: hook_permission"
+			],
+			[
+				"hook_sche",
+				"Snippet: hook_schema"
+			],
+			[
+				"fet",
+				"Fetch: File"
+			],
+			[
+				"Backn",
+				"Snippet: Backbone Model"
+			],
+			[
+				"fec",
+				"Fetch: Manage"
+			],
+			[
+				"quick",
+				"Quick File Creator: Create file"
+			]
+		],
+		"width": 610.0
+	},
+	"console":
+	{
+		"height": 183.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"install",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())",
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation')",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/contact/Sites/projecten/mobile/plaza",
+		"/Users/contact/Sites/projecten/mobile/plaza/App",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Components",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Components/Widgets",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Models",
+		"/Users/contact/Sites/projecten/mobile/plaza/plaza"
+	],
+	"file_history":
+	[
+		"/Users/contact/Sites/projecten/mobile/plaza/Settings.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/package.json",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Components/Forms/Fields/TxtInput.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Widgets/Loaderbar.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Models/BakeTypes.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Components/UI/ListPicker.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Models/Baker.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Components/Forms/Address.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Components/Home.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/.jshintrc",
+		"/Users/contact/Sites/projecten/mobile/plaza/index.ios.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Components/Forms/User.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Components/Home.jsx",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Components/UI/TipList.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Components/UI/ProfileAssets.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Helpers.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Models/User.js",
+		"/Users/contact/.zshrc",
+		"/Users/contact/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Components/Forms/test.jsx",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Components/Bakersprofile.js",
+		"/Users/contact/Sites/projecten/mobile/custom_npm/reactnativecreativeadobesdk/reactnativecreativeadobesdk/index.ios.js",
+		"/Users/contact/Library/Application Support/Sublime Text 3/Packages/User/REACT/rctclass.sublime-snippet",
+		"/Users/contact/Library/Application Support/Sublime Text 3/Packages/User/REACT/rctstyle.sublime-snippet",
+		"/Users/contact/Sites/projecten/mobile/plaza/node_modules/backbonereactnative/backbonereactnative.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/node_modules/react-native/Libraries/Components/SliderIOS/SliderIOS.android.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Models/BakersProfile.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Modules/BackboneAjax.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/node_modules/backbone/backbone.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/App/Components/Forms/User/GroupSignUp.js",
+		"/Users/contact/Sites/projecten/mobile/plaza/ios/Podfile",
+		"/Users/contact/Sites/projecten/mobile/plaza/ios/plaza.podspec",
+		"/Users/contact/Sites/projecten/mobile/plaza/plaza.podspec",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Forms/Fields/TxtInput.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Widgets/Loaderbar.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Widgets/Message.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Home.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/Settings.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Helpers.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Models/User.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Forms/User.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Modules/BackboneAjax.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Models/BakersProfile.js",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/modules/simpletest/tests/common.test",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/modules/geolivero/advanced_search/services/advanced_search_resources.inc",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Forms/Mail.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Styles/Default.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Forms/TxtInput.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/NewUser.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/package.json",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/iOS/FacebookLoginManager.m",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/node_modules/backbone/backbone.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Demo/DemoBaker.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Widgets/StepSlider.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/index.ios.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Bakersprofile.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Widgets/AnimImage.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Search.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Models/Baker.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Map.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Widgets/MapBakerCard.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Widgets/Baker.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/UI/Toolbar.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/node_modules/react-native-mapbox-gl/ios/RCTMapboxGL/RCTMapboxGL.m",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/index.android.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Widgets/Links.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/android/settings.gradle",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/node_modules/react-native/packager/react-packager/src/Server/index.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/android/app/build.gradle",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/android/app/src/main/java/com/cakesplaza/MainActivity.java",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Bakers/Contact.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/node_modules/react-native-webintent/package.json",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Bakers/Caketypes.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/node_modules/react-native/node_modules/jstransform/node_modules/commoner/test/source/widget/gallery.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/android/build.gradle",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Widgets/PicturePopup.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Widgets/CloseBtn.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/App/Components/Bakers/Beschrijving.js",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/design/assets/fontcustom.yml",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/node_modules/react-native-icons/fonts/zocial.json",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/respon/sass/mainsearch.scss",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/respon/sass/helpers/mixins.scss",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/respon/js/models.js",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/respon/js/views/search.js",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/respon/js/app.js",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/respon/sass/helpers/vars.scss",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/respon/js/collections.js",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/modules/geolivero/advanced_search/template/advanced_search.tpl.inc",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/respon/js/libs/chosen.jquery.js",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/respon/js/controllers.js",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/modules/geolivero/bakers/template/bakers.tpl.inc",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/respon/template/node.tpl.php",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/respon/template/user-profile.tpl.php",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/modules/geolivero/geo_bakers_lists/geo_bakers_list.module",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/modules/geolivero/advanced_search/helpers/advanced_search_generate_location.inc",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/modules/metatag/metatag.module",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/modules/geolivero/advanced_search/model/advanced_search.class.inc",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/modules/geolivero/advanced_search/advanced_search.module",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/libraries/gmaphelper/class.googleHelper.php",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/respon/sass/helpers/helpers.scss",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/modules/geolivero/geo_bakers_lists/class/geo_bakers_lists_models.inc",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/respon/js/templates.js",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/respon/template/page--front.tpl.php",
+		"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/modules/geolivero/geo_bakers_lists/____________.php",
+		"/Users/contact/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/node_modules/react-native-webintent/README.md",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/node_modules/react-native-webintent/src/main/java/com/RNWebIntent/RNWebIntentModule.java",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/node_modules/react-native/local-cli/generator-android/templates/package/MainActivity.java",
+		"/Users/contact/Sites/projecten/web/royal-highway/www/_js/components/routeplanner.js",
+		"/Users/contact/Library/Application Support/Sublime Text 3/Packages/User/build/NPMInstall.sublime-build",
+		"/Users/contact/Sites/projecten/mobile/cakesplaza/cakesplaza.sublime-project",
+		"/Users/contact/Library/Application Support/Sublime Text 3/Packages/User/build/ReactAndroid.sublime-build",
+		"/Users/contact/Library/Application Support/Sublime Text 3/Packages/User/ReactAndroid.sublime-build",
+		"/Users/contact/Library/Application Support/Sublime Text 3/Packages/User/tishadow.sublime-build",
+		"/Users/contact/Library/Application Support/Sublime Text 3/Packages/User/reactandroid.sublime-build",
+		"/Users/contact/Sites/projecten/web/royal-highway/www/_js/models.js",
+		"/Users/contact/Sites/projecten/web/royal-highway/www/_layouts/default.html",
+		"/Users/contact/Sites/projecten/web/royal-highway/www/_includes/footer.html",
+		"/Users/contact/Sites/projecten/web/royal-highway/www/index.html",
+		"/Users/contact/Sites/projecten/web/royal-highway/www/_js/routes.js",
+		"/Users/contact/Sites/projecten/web/royal-highway/www/_sass/_icon.scss",
+		"/Users/contact/Sites/projecten/web/royal-highway/www/_sass/incl/_helpers.scss",
+		"/Users/contact/Sites/projecten/web/royal-highway/www/.gitignore",
+		"/Users/contact/Sites/projecten/web/royal-highway/www/.giti",
+		"/Users/contact/Sites/projecten/web/royal-highway/www/_js/modules/html5slider.js",
+		"/Users/contact/Sites/projecten/web/royal-highway/www/_js/app.js",
+		"/Users/contact/Sites/projecten/web/royal-highway/www/_sass/incl/_layout.scss",
+		"/Users/contact/Sites/projecten/web/royal-highway/www/_sass/incl/_mixins.scss"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 99.0,
+		"where_history":
+		[
+			"",
+			"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/modules/geolivero",
+			"",
+			"/Users/contact/Sites/projecten/mobile/cakesplaza/node_modules/react-native-webintent",
+			"",
+			"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/",
+			"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/modules",
+			"/Users/contact/Sites/projecten/web/cakesplaza_hd/www/sites/all/themes/templ_white/sounds",
+			"",
+			"/Users/contact/Sites/projecten/mobile/cpapp/cakesplaza/app/widgets/multi.image",
+			"",
+			"/Volumes/werk/thuis/web/cakesplaza_hd/www/sites/all/modules/",
+			"/Volumes/werk/thuis/web/cakesplaza_hd/www/sites/all/modules/fboauth",
+			"",
+			"/Volumes/werk/thuis/web/whitecollar/www/sites/all/modules/geolivero/participants",
+			"",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/themes/respon",
+			"",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/modules/geolivero",
+			"",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/modules/geolivero",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/modules/",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/modules/geolivero",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/themes",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/modules/geolivero",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/modules/geolivero,/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/modules/geolivero/geo_bakers_lists",
+			"",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/modules/geolivero",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/modules/geolivero/",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/modules/geolivero/cake_orders",
+			"",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/",
+			"/Users/contact/Sites/projecten/cakesplaza_hd/www/sites/all/modules/geolivero/cake_orders",
+			"",
+			"/Users/contact/Sites/projecten/cakesplaza/",
+			"/Users/contact/Sites/projecten/cakesplaza/sites/all/modules/geolivero",
+			"/Users/contact/Sites/projecten/cakesplaza/sites/all/modules/geolivero/cake_orders",
+			"",
+			"/Users/contact/Sites/projecten/cakeplaza/www/sites/all/",
+			"/Users/contact/Sites/projecten/cakeplaza/www/sites/all/themes/templ_white/",
+			"/Users/contact/Sites/projecten/cakeplaza/www/modules/poll/",
+			"/Users/contact/Sites/projecten/cakeplaza/www/sites/modules/poll/",
+			"/Users/contact/Sites/projecten/cakeplaza/www/sites/modules/poll",
+			"/Users/contact/Sites/projecten/cakeplaza/www/sites/modules/pollpoll-choices",
+			"/Users/contact/Sites/projecten/cakeplaza/www/sites/all/themes/templ_white",
+			"/Users/contact/Sites/projecten/cakeplaza/www/",
+			"/Users/contact/Sites/projecten/cakeplaza/www/sites/all/",
+			"/Users/contact/Sites/projecten/cakeplaza/www/sites/all/themes/templ_white/",
+			"/Users/contact/Sites/projecten/cakeplaza/www/sites/all/themes/templ_white/sass",
+			"/Users/contact/Sites/projecten/cakeplaza/www/sites/all/sass",
+			"/Users/contact/Sites/projecten/cakeplaza/www/sites/all",
+			"/Users/contact/Sites/projecten/cakeplaza/www/sites/all/themes/templ",
+			"/Users/contact/Sites/projecten/cakeplaza/www/",
+			"/Users/contact/Sites/projecten/cakeplaza/www/sites/all/themes/templ",
+			"",
+			"<open folders>,/Users/contact/Sites/okly/okly-shop/sites/all/themes/oklyspace/",
+			"<open folders>,/Users/contact/Sites/okly/okly-shop/sites/all/themes/oklyspace/css",
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"scrollView",
+			"mainScroller",
+			"ref",
+			"50",
+			"Image",
+			"LayoutAnimation",
+			"Animated",
+			"singleWord",
+			"props",
+			"collection",
+			"save",
+			"baker/bakerproducts",
+			"tags",
+			"currentValue",
+			"inputField",
+			"container",
+			"lightPink",
+			"inputField",
+			"lightGray",
+			"20",
+			"Text",
+			"TouchableHighlight",
+			"TouchableOpacity",
+			"<Messages",
+			"Messages",
+			"break;",
+			"npm",
+			"onSuccess",
+			"//Helpers",
+			"avatarSource",
+			"logoSource",
+			"//Helpers",
+			"logoSource",
+			"avatarSource",
+			"this.props.model.set({",
+			"this.props.model",
+			"stepForm",
+			"this.validate",
+			"validate",
+			"validated",
+			"required={false}",
+			"onChange={(e)=> {",
+			"= true",
+			"parentState={this.state}",
+			"onChange={(e)=> { ",
+			"props.value",
+			"TipLis",
+			"defaultValue",
+			"value",
+			"color",
+			"                \n",
+			"multiline={true}",
+			"onSuccess",
+			"userStep",
+			"step",
+			"logoSource",
+			"avatarSource",
+			"filename",
+			"userFoto",
+			" // ",
+			"// ",
+			"next",
+			"onSuccess",
+			"step",
+			"options",
+			"avatarSource",
+			"upLoadPic",
+			"avatarSource",
+			" =",
+			"SliderIOS",
+			"200",
+			"120",
+			"80",
+			"model",
+			"SESSIONDATA",
+			"username",
+			"fetch",
+			"console.log",
+			"credentials",
+			"Backbone.ajax",
+			"fetch",
+			"There is no user with ID",
+			"_nativeSync",
+			"defaultSyncOptions",
+			"Backbone.ajax",
+			"Backbone.sync",
+			"fetch",
+			"Set a hash of model attributes",
+			"Backbone.sync",
+			"Backbone._nativeSync",
+			"Backbone.sync",
+			"saveData",
+			"next",
+			"fetch",
+			"showLoadingMessage",
+			"helper",
+			"userDiskKey",
+			"userDisk",
+			"saveData",
+			":path",
+			"View",
+			"Router",
+			"Router.extend",
+			"$",
+			"image",
+			"next",
+			"onOk",
+			"next",
+			"e.text",
+			"onBlur",
+			"mail",
+			"save",
+			"console.",
+			"console.log",
+			"this.props.model.set",
+			"baker/bakerproducts",
+			"Settings.REST",
+			"LoaderBar",
+			"100",
+			"stepForm()[0]",
+			"this.props.type",
+			"email-address",
+			"user_save",
+			"_user_resource_get_token",
+			"_user_resource_login",
+			"    ",
+			"_user_resource_access",
+			"_user_resource_login"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"permalink: /trainingen/best",
+			"http://dazzling.geo-genesis.net/"
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "App/Components/Forms/User.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14418,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11891,
+								11891
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": 469,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 8264.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "App/Components/UI/EditableField.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2346,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1632,
+								1632
+							]
+						],
+						"settings":
+						{
+							"_anf_new": "",
+							"auto_complete": false,
+							"function_name_status_row": 83,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1189.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "App/Components/Widgets/EditableBakeProduct.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2303,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1244,
+								1244
+							]
+						],
+						"settings":
+						{
+							"_anf_new": "",
+							"auto_complete": false,
+							"function_name_status_row": 57,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 817.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Settings.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 820,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								311,
+								319
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 13,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "App/Components/Forms/Fields/TxtInput.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5686,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1468,
+								1468
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": 73,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 132.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "App/Components/Bakersprofile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12554,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4217,
+								4180
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 153,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2369.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "App/Components/Home.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11398,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9959,
+								9878
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 391,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 6467.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 154.0
+	},
+	"output.find_results":
+	{
+		"height": 247.0
+	},
+	"pinned_build_system": "Packages/User/build/ReactAndroid.sublime-build",
+	"project": "plaza.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"setting",
+				"Settings.js"
+			],
+			[
+				"input",
+				"App/Components/Forms/Fields/TxtInput.js"
+			],
+			[
+				"bake",
+				"App/Components/Bakersprofile.js"
+			],
+			[
+				"home",
+				"App/Components/Home.js"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"widgets/loaderbar",
+				"App/Widgets/Loaderbar.js"
+			],
+			[
+				"field",
+				"App/Components/Forms/Fields/TxtInput.js"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"sett",
+				"Settings.js"
+			],
+			[
+				"form/user",
+				"App/Components/Forms/User.js"
+			],
+			[
+				"formuse",
+				"App/Components/Forms/User.js"
+			],
+			[
+				"user",
+				"App/Models/User.js"
+			],
+			[
+				"home.j",
+				"App/Components/Home.js"
+			],
+			[
+				"addres",
+				"App/Components/Forms/Address.js"
+			],
+			[
+				"profileassets",
+				"App/Components/UI/ProfileAssets.js"
+			],
+			[
+				"helpe",
+				"App/Helpers.js"
+			],
+			[
+				"formuser",
+				"App/Components/Forms/User.js"
+			],
+			[
+				"use",
+				"App/Models/User.js"
+			],
+			[
+				"helper",
+				"App/Helpers.js"
+			],
+			[
+				"bakers",
+				"App/Components/Bakersprofile.js"
+			],
+			[
+				"help",
+				"App/Helpers.js"
+			],
+			[
+				"helpers",
+				"App/Helpers.js"
+			],
+			[
+				"settin",
+				"Settings.js"
+			],
+			[
+				"baker",
+				"App/Components/Bakersprofile.js"
+			],
+			[
+				"fields",
+				"App/Components/Forms/Fields/TxtInput.js"
+			],
+			[
+				"backbonereac",
+				"node_modules/backbonereactnative/backbonereactnative.js"
+			],
+			[
+				"backrea",
+				"node_modules/backbonereactnative/backbonereactnative.js"
+			],
+			[
+				"bakbonere",
+				"node_modules/backbonereactnative/backbonereactnative.js"
+			],
+			[
+				"nodemodbackbon",
+				"node_modules/backbone/backbone.js"
+			],
+			[
+				"backbone",
+				"App/Modules/BackboneAjax.js"
+			],
+			[
+				"bacbon",
+				"node_modules/backbonereactnative/backbonereactnative.js"
+			],
+			[
+				"backbonereactnative",
+				"node_modules/backbonereactnative/backbonereactnative.js"
+			],
+			[
+				"newuse",
+				"App/Components/NewUser.js"
+			],
+			[
+				"demo",
+				"App/Components/Demo/DemoBaker.js"
+			],
+			[
+				"comsearch",
+				"App/Components/Search.js"
+			],
+			[
+				"picture",
+				"App/Components/Widgets/PicturePopup.js"
+			],
+			[
+				"caketyp",
+				"App/Components/Bakers/Caketypes.js"
+			],
+			[
+				"bakerbesc",
+				"App/Components/Bakers/Beschrijving.js"
+			],
+			[
+				"bakercon",
+				"App/Components/Bakers/Contact.js"
+			],
+			[
+				"loader",
+				"App/Widgets/Loaderbar.js"
+			],
+			[
+				"bakersp",
+				"App/Components/Bakersprofile.js"
+			],
+			[
+				"bakerspo",
+				"App/Models/BakersProfile.js"
+			],
+			[
+				"arrow",
+				"App/Widgets/Arrow.js"
+			],
+			[
+				"toolbar",
+				"App/UI/Toolbar.js"
+			],
+			[
+				"loade",
+				"App/Widgets/Loaderbar.js"
+			],
+			[
+				"inpu",
+				"App/Components/Forms/Fields/TxtInput.js"
+			],
+			[
+				"resources/user_resource",
+				"sites/all/modules/services/resources/user_resource.inc"
+			],
+			[
+				"services/advanced_search_resources",
+				"all/modules/geolivero/advanced_search/services/advanced_search_resources.inc"
+			],
+			[
+				"advanceservices",
+				"all/modules/geolivero/advanced_search/advanced_search.services.inc"
+			],
+			[
+				"hel",
+				"App/Helpers.js"
+			],
+			[
+				"index",
+				"index.ios.js"
+			],
+			[
+				"default",
+				"App/Styles/Default.js"
+			],
+			[
+				"hoe",
+				"App/Components/Home.js"
+			],
+			[
+				"searc",
+				"App/Components/Search.js"
+			],
+			[
+				"bakerspro",
+				"App/Components/Bakersprofile.js"
+			],
+			[
+				"defu",
+				"App/Styles/Default.js"
+			],
+			[
+				"inde",
+				"index.ios.js"
+			],
+			[
+				"modelbaker",
+				"App/Models/Baker.js"
+			],
+			[
+				"se",
+				"Settings.js"
+			],
+			[
+				"defaul",
+				"App/Styles/Default.js"
+			],
+			[
+				"widgetbake",
+				"App/Widgets/Baker.js"
+			],
+			[
+				"rctmapboxgl.m",
+				"node_modules/react-native-mapbox-gl/ios/RCTMapboxGL/RCTMapboxGL.m"
+			],
+			[
+				"map",
+				"App/Components/Map.js"
+			],
+			[
+				"backb",
+				"node_modules/backbone/backbone.js"
+			],
+			[
+				"package",
+				"package.json"
+			],
+			[
+				"bakerpro",
+				"App/Models/BakersProfile.js"
+			],
+			[
+				"packager/react-packager/src/server/index.js",
+				"node_modules/react-native/packager/react-packager/src/Server/index.js"
+			],
+			[
+				"links",
+				"App/Components/Widgets/Links.js"
+			],
+			[
+				"bakerspor",
+				"App/Models/BakersProfile.js"
+			],
+			[
+				"mainactivity.java",
+				"android/app/src/main/java/com/cakesplaza/MainActivity.java"
+			],
+			[
+				"android/app/build.gradle",
+				"android/app/build.gradle"
+			],
+			[
+				"android/setting.gradle",
+				"android/settings.gradle"
+			],
+			[
+				"baker.js",
+				"App/Models/Baker.js"
+			],
+			[
+				"settings.gradle",
+				"android/settings.gradle"
+			],
+			[
+				"build.",
+				"android/build.gradle"
+			],
+			[
+				"build.gradle",
+				"android/app/build.gradle"
+			],
+			[
+				"",
+				"index.ios.js"
+			],
+			[
+				"indeandroi",
+				"index.android.js"
+			],
+			[
+				"indexandroid",
+				"index.android.js"
+			],
+			[
+				"home.",
+				"App/Components/Home.js"
+			],
+			[
+				"close",
+				"App/Components/Widgets/CloseBtn.js"
+			],
+			[
+				"gal",
+				"node_modules/react-native/node_modules/jstransform/node_modules/commoner/test/source/widget/gallery.js"
+			],
+			[
+				"zocial.json",
+				"node_modules/react-native-icons/fonts/zocial.json"
+			],
+			[
+				"collection",
+				"all/themes/respon/js/collections.js"
+			],
+			[
+				"searchjs",
+				"all/themes/respon/js/views/search.js"
+			],
+			[
+				"node.tpl",
+				"all/themes/respon/template/node.tpl.php"
+			],
+			[
+				"mixin",
+				"all/themes/respon/sass/helpers/mixins.scss"
+			],
+			[
+				"vars",
+				"all/themes/respon/sass/helpers/vars.scss"
+			],
+			[
+				"mainsearc",
+				"all/themes/respon/sass/mainsearch.scss"
+			],
+			[
+				"collec",
+				"all/themes/respon/js/collections.js"
+			],
+			[
+				"helpers.",
+				"all/themes/respon/sass/helpers/helpers.scss"
+			],
+			[
+				"contact",
+				"App/Components/Bakers/Contact.js"
+			],
+			[
+				"link",
+				"App/Components/Widgets/Links.js"
+			],
+			[
+				"route",
+				"_js/routes.js"
+			],
+			[
+				"icon",
+				"_sass/_icon.scss"
+			],
+			[
+				"mix",
+				"_sass/incl/_mixins.scss"
+			],
+			[
+				"layout",
+				"_sass/incl/_layout.scss"
+			],
+			[
+				"app.",
+				"_js/app.js"
+			],
+			[
+				"app",
+				"_js/app.js"
+			],
+			[
+				"footer",
+				"_includes/footer.html"
+			],
+			[
+				"layou",
+				"_sass/incl/_layout.scss"
+			],
+			[
+				"html",
+				"_js/modules/html5slider.js"
+			],
+			[
+				"_io",
+				"_sass/_icon.scss"
+			],
+			[
+				"scree",
+				"_sass/screen.scss"
+			],
+			[
+				"layot",
+				"_sass/incl/_layout.scss"
+			],
+			[
+				"header",
+				"_includes/header.html"
+			],
+			[
+				"boo",
+				"_sass/_bootstrap.scss"
+			],
+			[
+				"var",
+				"sass/inc/vars.scss"
+			],
+			[
+				"layout.s",
+				"themes/templ/sass/layout.scss"
+			],
+			[
+				"home.sc",
+				"themes/templ/sass/home.scss"
+			],
+			[
+				"defau",
+				"App/Styles/Default.js"
+			],
+			[
+				"deta",
+				"App/Components/Bakers/Details.js"
+			],
+			[
+				"load",
+				"App/Widgets/Loaderbar.js"
+			],
+			[
+				"toolb",
+				"App/UI/Toolbar.js"
+			],
+			[
+				"page.tp",
+				"all/themes/templ/templates/page.tpl.php"
+			],
+			[
+				"klanten",
+				"all/themes/templ/sass/klanten.scss"
+			],
+			[
+				"sass/klanten.scss",
+				"all/themes/templ/sass/klanten.scss"
+			],
+			[
+				"html5slider",
+				"all/themes/templ/js/modules/html5slider.js"
+			],
+			[
+				"boots",
+				"all/themes/templ/sass/bootstrap.scss"
+			],
+			[
+				"defa",
+				"all/themes/templ/.sass-cache/46d87fc8f23b833e451c7601fd70eccc5cf04cbe/defaults.scssc"
+			],
+			[
+				"page.tpl.",
+				"all/themes/templ/templates/page.tpl.php"
+			],
+			[
+				"page.tpl",
+				"all/themes/templ/templates/page.tpl.php"
+			],
+			[
+				"toolba",
+				"App/UI/Toolbar.js"
+			],
+			[
+				"home.scss",
+				"themes/respon/sass/home.scss"
+			],
+			[
+				"pagetpl",
+				"themes/templ/templates/page.tpl.php"
+			],
+			[
+				"klanten.",
+				"themes/templ/sass/klanten.scss"
+			],
+			[
+				"inc/helpers.scss",
+				"themes/templ/sass/inc/helpers.scss"
+			],
+			[
+				"nav",
+				"themes/templ/sass/nav.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 223.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -14,13 +14,14 @@ module.exports.colors = {
   darkGray: '#979797',
   green: '#4AE28F',
   sDarkBrown: '#423535',
+  red: '#D64355',
   darkerPink: '#A35E5E'
 };
 
 module.exports.box = {
   width: windowSize.width,
   height: windowSize.height
-}
+};
 
 
 

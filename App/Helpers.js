@@ -1,3 +1,4 @@
+/*globals module:true, fetch:true, then:true, require:true*/
 'use strict';
 
 var Settings = require('./../Settings');
@@ -10,6 +11,7 @@ var userToken,
   userRegisterSteps,
   ASYNCKEY = '@user:private',
   STEPSKEY = '@user:steps',
+  model = {},
   login,
   token;
 
@@ -33,13 +35,13 @@ userToken = {
     }));
   },
 
-  destroy: (cb) => {
+  destroy(cb) {
 
     AsyncStorage.removeItem(ASYNCKEY).
       then(cb);
   },
 
-  get: (cb)=> {
+  get(cb) {
 
     AsyncStorage.getItem(ASYNCKEY)
       .then((value)=> {
@@ -67,7 +69,6 @@ userRegisterSteps = {
     })
     .done();
   }
-
 };
 
 token = function(callback) {
@@ -115,6 +116,15 @@ login = function (token, data, callback) {
 };
 
 
+module.exports.getField = function (model) {
+  if (model) {
+    return model.und || {'0': {}};
+  } else {
+    return {'0': {}};
+  }
+  
+};
+
 module.exports.userStep = userRegisterSteps;
 module.exports.userToken = userToken;
 module.exports.getToken = token;
@@ -124,6 +134,22 @@ module.exports.setHeaders = function (SESS) {
     'X-CSRF-Token': SESS.token,
     'authorization-key': SESS.sessionName + ':' + SESS.sessionId
   };
+};
+
+module.exports.getAddresses = function (options, callback) {
+  var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng={lat},{lng}&sensor=false',
+    urlFormat = url.replace('{lat}', options.lat).replace('{lng}', options.lng);
+  fetch(urlFormat)
+  .then((response) => {
+      return response.text();
+    })
+    .then((response) => {
+      callback(JSON.parse(response));
+    })
+    .catch((error) => {
+      console.warn(error);
+  });
+
 };
 
 module.exports.setFileOptions = function (SESS, files) {
@@ -139,5 +165,5 @@ module.exports.setFileOptions = function (SESS, files) {
         'hello': 'world',
     },
     files: files
-  }
+  };
 };

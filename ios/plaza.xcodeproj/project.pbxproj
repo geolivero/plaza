@@ -216,8 +216,8 @@
 		BE1EFF5A1C1C6D6D008798E1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BE1EFF5C1C1C6D85008798E1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BE1EFF5E1C1C6D95008798E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		BE41DD931C1CE3F80022F3DC /* ImageEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditor.h; sourceTree = "<group>"; };
-		BE41DD941C1CE3F80022F3DC /* ImageEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditor.m; sourceTree = "<group>"; };
+		BE41DD931C1CE3F80022F3DC /* ImageEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageEditor.h; path = ImageEditor/ImageEditor.h; sourceTree = "<group>"; };
+		BE41DD941C1CE3F80022F3DC /* ImageEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageEditor.m; path = ImageEditor/ImageEditor.m; sourceTree = "<group>"; };
 		BE41DD971C1D8FC60022F3DC /* UIReactAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIReactAlert.h; sourceTree = "<group>"; };
 		BE41DD981C1D8FC60022F3DC /* UIReactAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIReactAlert.m; sourceTree = "<group>"; };
 		BE9CB1A91C013D0E0051377A /* Allura-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Allura-Regular.ttf"; sourceTree = "<group>"; };
@@ -422,9 +422,9 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BE516F801C2191F8009A20B6 /* ImageEditor */,
 				BE0B3C8C1C1F5D4700A6A659 /* FileUpload.m */,
 				BE41DD961C1D8F370022F3DC /* UIReactAlert */,
-				BE41DD921C1CE3F80022F3DC /* ImageEditor */,
 				BE1EFF5E1C1C6D95008798E1 /* UIKit.framework */,
 				BE1EFF5C1C1C6D85008798E1 /* StoreKit.framework */,
 				BE1EFF5A1C1C6D6D008798E1 /* OpenGLES.framework */,
@@ -524,15 +524,6 @@
 			name = fonts;
 			sourceTree = "<group>";
 		};
-		BE41DD921C1CE3F80022F3DC /* ImageEditor */ = {
-			isa = PBXGroup;
-			children = (
-				BE41DD931C1CE3F80022F3DC /* ImageEditor.h */,
-				BE41DD941C1CE3F80022F3DC /* ImageEditor.m */,
-			);
-			path = ImageEditor;
-			sourceTree = "<group>";
-		};
 		BE41DD961C1D8F370022F3DC /* UIReactAlert */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +531,15 @@
 				BE41DD981C1D8FC60022F3DC /* UIReactAlert.m */,
 			);
 			name = UIReactAlert;
+			sourceTree = "<group>";
+		};
+		BE516F801C2191F8009A20B6 /* ImageEditor */ = {
+			isa = PBXGroup;
+			children = (
+				BE41DD931C1CE3F80022F3DC /* ImageEditor.h */,
+				BE41DD941C1CE3F80022F3DC /* ImageEditor.m */,
+			);
+			name = ImageEditor;
 			sourceTree = "<group>";
 		};
 		BE9CB1BC1C013DA80051377A /* Products */ = {
@@ -613,7 +613,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -910,6 +910,7 @@
 				INFOPLIST_FILE = plazaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/plaza.app/plaza";
 			};
@@ -927,6 +928,7 @@
 				INFOPLIST_FILE = plazaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/plaza.app/plaza";
 			};
@@ -946,6 +948,7 @@
 				INFOPLIST_FILE = plaza/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = plaza;
 			};
 			name = Debug;
@@ -963,6 +966,7 @@
 				INFOPLIST_FILE = plaza/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = plaza;
 			};
 			name = Release;
@@ -987,6 +991,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;

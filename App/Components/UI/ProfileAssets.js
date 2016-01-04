@@ -48,6 +48,14 @@ export default class ProfileAssets extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({
+      avatarSource: this.props.defaultSource.uri || false
+    });
+    console.log(this.props.defaultSource);
+    console.log('Logo source');
+  }
+
 
   editPic(src) {
     imageEditor.showEditor({
@@ -83,7 +91,7 @@ export default class ProfileAssets extends React.Component {
 
     options = this.state.options;
 
-    if (this.state.avatarSource) {
+    if (this.state.avatarSource.uri) {
       options.customButtons = {
         'Foto wijzigen' : 'edit'
       }
@@ -104,7 +112,7 @@ export default class ProfileAssets extends React.Component {
   render() {
     return(
       ()=> {
-        if (this.state.avatarSource) {
+        if (this.state.avatarSource.uri) {
           return (
             <TouchableOpacity onPress={() => { this.upLoadPic() }}>
               <Image resizeMode={'contain'} style={[styles.image]} source={{uri: this.state.avatarSource.uri }} />

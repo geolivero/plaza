@@ -1,4 +1,4 @@
-'user strict';
+/*globals import:true*/
 
 import React from 'react-native';
 import DEFCSS from './../../Styles/Default';
@@ -9,6 +9,9 @@ import TxtInput from './../Forms/Fields/TxtInput';
 import Messages from './../Widgets/Message';
 import { UIImagePickerManager, FileUpload } from 'NativeModules';
 import ProfileAssets from '././../UI/ProfileAssets';
+import FormAddress from './Address';
+import ListPicker from './../UI/ListPicker';
+import EditableBakeProduct from './../Widgets/EditableBakeProduct';
 
 
 var {
@@ -35,6 +38,7 @@ export default class User extends React.Component {
       shiftUp: new Animated.Value(Settings.box.height),
       text: '',
       step: 0,
+      logoSource: false,
       username: this.props.model.get('name') || '',
       allowed: false,
       emailText: '',
@@ -47,19 +51,21 @@ export default class User extends React.Component {
       this.state.shiftUp,
       {
         toValue: 0
-      },
+      }
     ).start();
 
     this.props.model.on('change', (model)=> {
-      this.onModelChange(model)
+      this.onModelChange(model);
     });
 
     Helpers.userToken.get((SESSIONDATA)=> {
       if (SESSIONDATA) {
         this.props.model.set(SESSIONDATA.user);
 
+        console.log(this.props.model.attributes);
         this.setState({
-          username: this.props.model.get('name')
+          username: this.props.model.get('name'),
+          logoSource: this.props.model.get('field_logo').length ? Helpers.getField(this.props.model.get('field_logo'))['0'].full_url : false
         });
       }
     });
@@ -67,9 +73,11 @@ export default class User extends React.Component {
     Helpers.userStep.get((STEP)=> {
       console.log(STEP);
       this.setState({
-        step: STEP ? parseInt(STEP) : 1
+        step: STEP ? parseInt(STEP) : 0
       });
     });
+
+
   }
 
   onModelChange(model) {
@@ -89,7 +97,7 @@ export default class User extends React.Component {
       this.state.shiftUp,
       {
         toValue: Settings.box.height
-      },
+      }
     ).start(() => {
       this.props.onUserClose();
     });
@@ -165,37 +173,27 @@ export default class User extends React.Component {
 
           if (this.props.model.get('type') === 'userFoto') {
 
-            FileUpload.upload(Helpers.setFileOptions(SESSIONDATA, {
-              files: {
-                name: [
-                  {
-                    filename: this.props.model.get('filename') + '.jpg',
-                    filepath: this.props.model.get('file'),
-                    filetype: 'image/jpeg', 
-                  }
-                ]
+            FileUpload.upload(Helpers.setFileOptions(SESSIONDATA, [
+              {
+                filename: this.props.model.get('filename') + '.jpg',
+                filepath: this.props.model.get('file'),
+                filetype: 'image/jpeg', 
               }
-            }), (err, result) => {
-                console.log('upload:', err, result);
+            ]), (err, result) => {
+              if (err) {
+                console.log(err);
+                //@todo: fix error messages
+              } else {
+                console.log(result.data);
+                this.props.model.set({
+                  avatar_fids: JSON.parse(result.data)
+                });
+                this.saveModel(SESSIONDATA);
+              }
             });
 
           } else {
-            this.props.model.save({}, {
-
-              headers: Helpers.setHeaders(SESSIONDATA),
-
-              success: (model)=> {
-                Helpers.userToken.saveUser(SESSIONDATA, model.attributes);
-                this.onSuccess();
-                this.hideLoadingMessage();
-              },
-
-              error: (model, error)=> {
-                console.log(error);
-                //@todo: Create an error view
-                this.hideLoadingMessage();
-              }
-            });
+            this.saveModel(SESSIONDATA);
           }          
         });
 
@@ -204,10 +202,29 @@ export default class User extends React.Component {
     }
   }
 
+  saveModel(SESSIONDATA) {
+    this.props.model.save({}, {
+
+      headers: Helpers.setHeaders(SESSIONDATA),
+
+      success: (model)=> {
+        console.log(model);
+        Helpers.userToken.saveUser(SESSIONDATA, model.attributes);
+        this.onSuccess();
+        this.hideLoadingMessage();
+      },
+
+      error: (model, error)=> {
+        console.log(error);
+        //@todo: Create an error view
+        this.hideLoadingMessage();
+      }
+    });
+  }
+
   onOk() {
     switch(this.state.step) {
       case 0:
-        
         this.setState({
           showMessage: false
         });
@@ -221,7 +238,6 @@ export default class User extends React.Component {
 
   onAvatarReady(source) {
     console.log(source);
-
   }
 
   hideLoadingMessage() {
@@ -232,7 +248,7 @@ export default class User extends React.Component {
   }
 
   showLoadingMessage() {
-    return(
+    return (
       <Messages
         type={'loader'}
         MessageContent={'Yes! Een moment aub.'}
@@ -331,18 +347,17 @@ export default class User extends React.Component {
       {
         render: ()=> {
           return (
-            <View>
+            <View style={styles.formContainer}>
               <Text style={[ DEFCSS.sansc, styles.title ]}>JOUW FOTO OF LOGO</Text>
               <Text style={[ DEFCSS.sansc, styles.title, styles.subTitle ]}>Een foto toevoegen aan jouw profiel</Text>
               <ProfileAssets 
-                type="avatar" 
+                type="avatar"
+                defaultSource={{ uri: this.state.logoSource }}
                 onReady={(source)=> {
-                  
-
 
                   this.props.model.set({
                     type: 'userFoto',
-                    filename: this.props.model.get('name').replace(/\s/g, '').toLowerCase() + '_logo',
+                    filename: this.props.model.get('name').replace(/\s\@\./g, '').toLowerCase() + '_logo',
                     file: source.fileSource.uri
                   });
 
@@ -351,13 +366,86 @@ export default class User extends React.Component {
           );
         }
 
+      },
+
+      {
+        render: ()=> {
+          return (
+            <View>
+              <Text style={[ DEFCSS.sansc, styles.title ]}>OVER JOUW</Text>
+              <Text style={[ DEFCSS.sansc, styles.title, styles.subTitle ]}>Vertel meer wat je doet</Text>
+              
+              <TxtInput
+                type={'default'}
+                key='username'
+                multiline={true}
+                onChange={(e)=> { 
+                  this.props.model.set({
+                      type: 'bedrijf',
+                      vertel_over_jouw_bedrijf: e.text
+                  });
+                  this.setState({ 
+                    validated: e ? e.validated : false
+                  });
+                }}
+                value={
+                  this.props.model.get('field_vertel_over_jouw_bedrijf').length != 0 ? 
+                  this.props.model.get('field_vertel_over_jouw_bedrijf').und['0'].value : ''
+                }
+                placeholder={'Over mij'}/>
+
+            </View>
+          );
+        }
+
+      },
+
+      {
+        render: ()=> {
+
+          return(
+            
+              <FormAddress
+                ref={'address'}
+                onReady={(model)=> {
+                  console.log(model);
+                  console.log(this.props.model);
+                }}
+              model={this.props.model} />
+            
+          );
+        }
+      },
+      {
+        render: ()=> {
+
+          return(
+            <View>
+              <Text style={[ DEFCSS.sansc, styles.title ]}>WAT BAK JE</Text>
+              <ListPicker model={this.props.model} />
+            </View>
+          );
+        }
+      },
+      {
+        render: ()=> {
+
+          return(
+            <View>
+              <Text style={[ DEFCSS.sansc, styles.title ]}>UPLOAD JOUW FOTO</Text>
+              <EditableBakeProduct 
+                onReady={()=>{}}
+                scrollView={this.refs.mainScroller}
+                title={'titel product'}/>
+            </View>
+          );
+        }
       }
-
-
     ];
   }
 
   render() {
+    
     return(
       <View style={[styles.wrapper]}>
         <Animated.View style={[
@@ -379,10 +467,11 @@ export default class User extends React.Component {
           </View>
 
           <ScrollView
+            ref={'mainScroller'}
             automaticallyAdjustContentInsets={false}
             style={styles.scrollView}>
-
             { this.stepForm()[this.state.step].render() }
+
 
           </ScrollView>
 
@@ -424,6 +513,9 @@ var styles = StyleSheet.create({
     top: 0,
     bottom: 0,
     right: 0
+  },
+  formContainer: {
+    flex: 1
   },
   image: {
     width: 150,

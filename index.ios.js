@@ -1,6 +1,3 @@
-'use strict';
-
-
 var React = require('react-native');
 var Home = require('./App/Components/Home');
 var BakersProfile = require('./App/Components/Bakersprofile');
@@ -82,31 +79,23 @@ var CP = React.createClass({
     StatusBarIOS.setHidden(false);
     switch(route.id) {
       case 'home':
-        return <Home navigator={nav} />
-      break;
+        return <Home navigator={nav} />;
       case 'bakersprofile':
-        return <BakersProfile collection={route.collection} model={route.model} navigator={nav} />
-      break;
+        return <BakersProfile collection={route.collection} model={route.model} navigator={nav} />;
       case 'bakersgalerie':
-        return <PicturePopup onClose={route.onClose} imgURL={route.imgURL} navigator={nav} />
-      break;
+        return <PicturePopup onClose={route.onClose} imgURL={route.imgURL} navigator={nav} />;
       case 'bakersmap':
         StatusBarIOS.setHidden(true);
-        return <BakersMap onClose={route.onClose} model={route.model} collection={route.collection} navigator={nav} />
-      break;
+        return <BakersMap onClose={route.onClose} model={route.model} collection={route.collection} navigator={nav} />;
       case 'search':
         StatusBarIOS.setHidden(true);
-        return <Search collection={route.collection} navigator={nav} />
-      break;
+        return <Search collection={route.collection} navigator={nav} />;
       case 'demobaker':
         StatusBarIOS.setHidden(true);
-        return <BakersDemo navigator={nav} />
-      break;
+        return <BakersDemo navigator={nav} />;
       case 'createNewUserAccount':
         StatusBarIOS.setHidden(true);
-        return <NewUserAccount navigator={nav} type={route.type} />
-      break;
-      
+        return <NewUserAccount navigator={nav} type={route.type} />;
     }
   },
   configureScene() {
