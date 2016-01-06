@@ -52,8 +52,6 @@ export default class ProfileAssets extends React.Component {
     this.setState({
       avatarSource: this.props.defaultSource.uri || false
     });
-    console.log(this.props.defaultSource);
-    console.log('Logo source');
   }
 
 

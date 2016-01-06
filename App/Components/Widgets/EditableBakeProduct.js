@@ -23,6 +23,7 @@ var {
   ScrollView
 } = React;
 
+
 export default class EditableBakeProduct extends React.Component {
   constructor(props) {
     super(props);
@@ -36,6 +37,14 @@ export default class EditableBakeProduct extends React.Component {
 
   }
 
+  savePicture(source) {
+    this.props.model.set({
+      type: 'bakerproduct',
+      product_file: this.state.title + '_foto',
+      file: source.fileSource.uri
+    });
+  }
+
   render() {
     return(
       <View style={[styles.container]}>
@@ -43,20 +52,9 @@ export default class EditableBakeProduct extends React.Component {
           <PictureAsset
             type="full"
             defaultSource={{ uri: this.state.picture }}
-            onReady={(source)=> {
-              this.props.model.set({
-                type: 'userFoto',
-                product_file: this.state.title + '_foto',
-                file: source.fileSource.uri
-              });
-            }} />
+            onReady={(source)=> { this.savePicture(source) }} />
         </View>
         <EditableField
-          onKeyPress={
-            (e)=> {
-              console.log(e);
-            }
-          }
           name={'productTitle'}
           type={'title'}
           onChange={(text)=> {
@@ -79,34 +77,19 @@ export default class EditableBakeProduct extends React.Component {
               pruduct_content: text
             });
           }}
-          onKeyPress={
-            (e)=> {
-              console.log(e);
-            }
-          }
           content={this.props.description} />
 
           <EditableField
-            onKeyPress={
-              (e)=> {
-                console.log(e);
-              }
-            }
             name={'productUnit'}
             scrollView={this.props.scrollView}
             onReady={()=> this.onReady('unit')}
-            content={this.props.unit} />
+            content={this.props.unit}
             onChange={(text)=> {
               this.props.model.set({
                 pruduct_unit: text
               });
-            }}
+            }}/>
             <EditableField
-              onKeyPress={
-                (e)=> {
-                  console.log(e);
-                }
-              }
               type={'price'}
               name={'productPrice'}
               onChange={(text)=> {
