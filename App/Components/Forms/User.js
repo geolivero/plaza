@@ -47,7 +47,7 @@ export default class User extends React.Component {
   }
 
   componentDidMount() {
-    Animated.timing( 
+    Animated.timing(
       this.state.shiftUp,
       {
         toValue: 0
@@ -93,7 +93,7 @@ export default class User extends React.Component {
   }
 
   onBack() {
-    Animated.timing( 
+    Animated.timing(
       this.state.shiftUp,
       {
         toValue: Settings.box.height
@@ -157,7 +157,7 @@ export default class User extends React.Component {
 
           });
         });
-      break; 
+      break;
 
       default:
         this.setState({
@@ -177,7 +177,7 @@ export default class User extends React.Component {
               {
                 filename: this.props.model.get('filename') + '.jpg',
                 filepath: this.props.model.get('file'),
-                filetype: 'image/jpeg', 
+                filetype: 'image/jpeg',
               }
             ]), (err, result) => {
               if (err) {
@@ -194,10 +194,10 @@ export default class User extends React.Component {
 
           } else {
             this.saveModel(SESSIONDATA);
-          }          
+          }
         });
 
-          
+
         break;
     }
   }
@@ -252,11 +252,11 @@ export default class User extends React.Component {
       <Messages
         type={'loader'}
         MessageContent={'Yes! Een moment aub.'}
-        MessageHeader={'GEGEVENS BEWAREN!'}/>
+        MessageHeader={'GEGEVENS BEWAREN!'} />
     );
   }
 
-  
+
 
   stepForm() {
     return [
@@ -267,15 +267,15 @@ export default class User extends React.Component {
             <View>
               <Text style={[ DEFCSS.sansc, styles.title ]}>JOUW EMAIL ADRES</Text>
               <Text style={[ DEFCSS.sansc, styles.title, styles.subTitle ]}>Begin met jouw bakkers account</Text>
-              
+
               <TxtInput
                 type={'email-address'}
                 key='email'
-                onChange={(e)=> { 
+                onChange={(e)=> {
                   this.props.model.set({
                       email: e.text
                   });
-                  this.setState({ 
+                  this.setState({
                     emailText: e.text,
                     validated: e ? e.validated : false
                   });
@@ -292,7 +292,7 @@ export default class User extends React.Component {
                   this.props.model.set({
                     pass: e.text
                   });
-                  this.setState({ 
+                  this.setState({
                     passwText: e.text,
                     validated: e ? e.validated : false
                   });
@@ -306,12 +306,12 @@ export default class User extends React.Component {
         },
         messages: () => {
           return(
-            <Messages 
+            <Messages
               onOk={ ()=> this.onOk() }
               onCancel={ ()=> this.onOk() }
               MessageContent={this.state.validated ? this.state.emailText : 'Email adres niet correct, corrigeer dit eerst voordat je verder kan gaan.' }
               MessageHeader={this.state.validated ? 'Is jouw email correct?': 'Sorry!'}/>
-          ); 
+          );
         }
       },
 
@@ -321,17 +321,17 @@ export default class User extends React.Component {
             <View>
               <Text style={[ DEFCSS.sansc, styles.title ]}>GEBRUIKERSNAAM</Text>
               <Text style={[ DEFCSS.sansc, styles.title, styles.subTitle ]}>Kies een makkelijke naam</Text>
-              
+
               <TxtInput
                 type={'default'}
                 key='username'
-                onChange={(e)=> { 
+                onChange={(e)=> {
                   this.props.model.set({
                       type: 'username',
                       name: e.text,
                       field_name: e.text
                   });
-                  this.setState({ 
+                  this.setState({
                     validated: e ? e.validated : false
                   });
                 }}
@@ -350,7 +350,7 @@ export default class User extends React.Component {
             <View style={styles.formContainer}>
               <Text style={[ DEFCSS.sansc, styles.title ]}>JOUW FOTO OF LOGO</Text>
               <Text style={[ DEFCSS.sansc, styles.title, styles.subTitle ]}>Een foto toevoegen aan jouw profiel</Text>
-              <ProfileAssets 
+              <ProfileAssets
                 type="avatar"
                 defaultSource={{ uri: this.state.logoSource }}
                 onReady={(source)=> {
@@ -374,22 +374,22 @@ export default class User extends React.Component {
             <View>
               <Text style={[ DEFCSS.sansc, styles.title ]}>OVER JOUW</Text>
               <Text style={[ DEFCSS.sansc, styles.title, styles.subTitle ]}>Vertel meer wat je doet</Text>
-              
+
               <TxtInput
                 type={'default'}
                 key='username'
                 multiline={true}
-                onChange={(e)=> { 
+                onChange={(e)=> {
                   this.props.model.set({
                       type: 'bedrijf',
                       vertel_over_jouw_bedrijf: e.text
                   });
-                  this.setState({ 
+                  this.setState({
                     validated: e ? e.validated : false
                   });
                 }}
                 value={
-                  this.props.model.get('field_vertel_over_jouw_bedrijf').length != 0 ? 
+                  this.props.model.get('field_vertel_over_jouw_bedrijf').length != 0 ?
                   this.props.model.get('field_vertel_over_jouw_bedrijf').und['0'].value : ''
                 }
                 placeholder={'Over mij'}/>
@@ -404,7 +404,7 @@ export default class User extends React.Component {
         render: ()=> {
 
           return(
-            
+
               <FormAddress
                 ref={'address'}
                 onReady={(model)=> {
@@ -412,7 +412,7 @@ export default class User extends React.Component {
                   console.log(this.props.model);
                 }}
               model={this.props.model} />
-            
+
           );
         }
       },
@@ -432,11 +432,14 @@ export default class User extends React.Component {
 
           return(
             <View>
-              <Text style={[ DEFCSS.sansc, styles.title ]}>UPLOAD JOUW FOTO</Text>
-              <EditableBakeProduct 
+              <Text style={[ DEFCSS.sansc, styles.title ]}>DIENST INFORMATIE</Text>
+              <EditableBakeProduct
                 onReady={()=>{}}
                 scrollView={this.refs.mainScroller}
-                title={'titel product'}/>
+                description={'Dienst beschrijving'}
+                unit={'Dienst eenheid'}
+                price={'Dienst prijs'}
+                title={'Titel dienst'}/>
             </View>
           );
         }
@@ -445,7 +448,7 @@ export default class User extends React.Component {
   }
 
   render() {
-    
+
     return(
       <View style={[styles.wrapper]}>
         <Animated.View style={[

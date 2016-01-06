@@ -57,6 +57,8 @@ export default class EditableField extends React.Component {
             this.props.onKeyPress(e)
           }
         }}
+        autoFocus={true}
+        type={this.props.type}
         onDone={(text)=> this.doneEditing(text) }
         multiline={this.props.multiline}
         name={this.props.name}
@@ -73,12 +75,30 @@ export default class EditableField extends React.Component {
     });
   }
 
+  getStyles() {
+    switch (this.props.type) {
+      case 'title':
+        return [styles.title, DEFCSS.sansc];
+    }
+  }
+
+
+
   renderText() {
     return (
       <TouchableOpacity onPress={(e)=> { this.editText(e); }}>
         <View style={[styles.rowText]}>
-          <Text style={[DEFCSS.sans, styles.contentField]}>
-            {this.state.content}
+          {()=>{
+            if (this.props.type === 'price') {
+              return (
+                <Text style={[DEFCSS.sans, styles.contentField, styles.euro]}>
+                  €
+                </Text>
+              );
+            }
+          }()}
+          <Text style={[DEFCSS.sans, this.getStyles(), styles.contentField]}>
+            {( this.props.type === 'title' ? this.state.content.toUpperCase() : this.state.content )}
           </Text>
           <Icon
                 name='fontawesome|pencil'
@@ -109,8 +129,15 @@ var styles = StyleSheet.create({
   editable: {
     width: 20,
     height: 20,
-    flex: 0.2,
+    flex: 0.1,
     marginLeft: 5
+  },
+  euro: {
+    marginRight: 5,
+    flex: 0.05
+  },
+  title: {
+    fontSize: 20
   },
   rowText: {
     padding: 10,
@@ -118,7 +145,7 @@ var styles = StyleSheet.create({
     flexDirection: 'row'
   },
   contentField: {
-    flex: 0.8,
+    flex: 0.85,
     flexWrap: 'wrap'
   },
   row: {

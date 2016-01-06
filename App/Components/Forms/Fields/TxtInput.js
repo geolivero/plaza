@@ -114,12 +114,12 @@ export default class TxtInput extends React.Component {
                     color={Settings.colors.green}
                     style={[styles.iconBtn]} />
                   <Text style={[DEFCSS.sans, styles.doneTxt, { color: Settings.colors.darkBrown }]}>KLAAR</Text>
-                
+
             </View>
             </TouchableOpacity>
           );
         }
-        
+
       } else {
         return (
           <View style={styles.feedback}>
@@ -141,7 +141,12 @@ export default class TxtInput extends React.Component {
   }
 
   getType() {
-    return this.props.type === 'password' ? null : this.props.type;
+    if (this.props.type === 'password') {
+      return 'default';
+    }
+    if (this.props.type === 'price') {
+      return 'numbers-and-punctuation';
+    }
   }
 
   inputFocused () {
@@ -162,6 +167,8 @@ export default class TxtInput extends React.Component {
         style={[styles.field, DEFCSS.sans, (this.props.multiline ? styles.fieldMulti : {})]}
         multiline={this.props.multiline}
         secureTextEntry={ this.props.type === 'password' ? this.state.passSwapper : false }
+        autoFocus={this.props.autoFocus}
+        autoCapitalize={(this.props.type === 'title') ? 'characters' : 'none'}
         onChangeText={(text) => {
           this.setState({ txt: text.toLowerCase() });
           //this.onChange();
@@ -191,14 +198,14 @@ export default class TxtInput extends React.Component {
 
       {this.getMessage()}
       </View>
-      
+
     );
   }
 }
 
 var styles = StyleSheet.create({
   feedback: {
-    
+
   },
   doneBtn: {
     flexDirection: 'row',

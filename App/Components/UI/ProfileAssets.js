@@ -34,7 +34,7 @@ export default class ProfileAssets extends React.Component {
         title: null, // specify null or empty string to remove the title
         cancelButtonTitle: 'Annuleren',
         takePhotoButtonTitle: 'Maak een Photo...', // specify null or empty string to remove this button
-        chooseFromLibraryButtonTitle: 'Kies foto...', // specify null or empty string to 
+        chooseFromLibraryButtonTitle: 'Kies foto...', // specify null or empty string to
         maxWidth: 800,
         maxHeight: 800,
         quality: 0.4,
@@ -93,8 +93,8 @@ export default class ProfileAssets extends React.Component {
 
     if (this.state.avatarSource.uri) {
       options.customButtons = {
-        'Foto wijzigen' : 'edit'
-      }
+        'Foto bewerken' : 'edit'
+      };
     } else {
       options.customButtons = null;
     }
@@ -108,6 +108,14 @@ export default class ProfileAssets extends React.Component {
     });
   }
 
+  getStyle() {
+    switch (this.props.type) {
+      case 'full':
+        return [styles.fullscreen];
+      default:
+        return [styles.image];
+    }
+  }
 
   render() {
     return(
@@ -115,7 +123,9 @@ export default class ProfileAssets extends React.Component {
         if (this.state.avatarSource.uri) {
           return (
             <TouchableOpacity onPress={() => { this.upLoadPic() }}>
-              <Image resizeMode={'contain'} style={[styles.image]} source={{uri: this.state.avatarSource.uri }} />
+              <Image resizeMode={this.props.type === 'full' ? 'cover' : 'contain'}
+                style={this.getStyle()}
+                source={{uri: this.state.avatarSource.uri }} />
             </TouchableOpacity>
           );
         } else {
@@ -151,6 +161,11 @@ var styles = StyleSheet.create({
     margin: 10,
     borderColor: Settings.colors.darkPink,
     borderWidth: 1
+  },
+  fullscreen: {
+    flex: 1,
+    width: Settings.box.width,
+    height: Settings.box.width
   },
   uploadFotoTxt: {
     color: Settings.colors.darkerPink
