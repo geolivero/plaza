@@ -23,30 +23,12 @@ var {
   ScrollView
 } = React;
 
-// {()=> {
-//   if (this.state.pictureExist) {
-//     return (
-//       <Image
-//         style={styles.icon_cake}
-//         source={{uri: this.state.pictureURL}} />
-//     );
-//   } else {
-//     return (
-//       <Icon
-//         name='fontawesome|camera'
-//         size={22}
-//         color={Settings.colors.darkGray}
-//         style={[styles.camera]} />
-//     );
-//   }
-// }()}
-
 export default class EditableBakeProduct extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       pictureExist: false,
-      picture: ''
+      picture: false
     };
   }
 
@@ -62,11 +44,11 @@ export default class EditableBakeProduct extends React.Component {
             type="full"
             defaultSource={{ uri: this.state.picture }}
             onReady={(source)=> {
-              // this.props.model.set({
-              //   type: 'userFoto',
-              //   filename: this.props.model.get('name').replace(/\s\@\./g, '').toLowerCase() + '_logo',
-              //   file: source.fileSource.uri
-              // });
+              this.props.model.set({
+                type: 'userFoto',
+                product_file: this.state.title + '_foto',
+                file: source.fileSource.uri
+              });
             }} />
         </View>
         <EditableField
@@ -77,15 +59,26 @@ export default class EditableBakeProduct extends React.Component {
           }
           name={'productTitle'}
           type={'title'}
+          onChange={(text)=> {
+            this.setState({
+              title: text.replace(/\s/g, '_').toLowerCase()
+            });
+            this.props.model.set({
+              pruduct_title: text
+            });
+          }}
           scrollView={this.props.scrollView}
-          onReady={()=> this.onReady('title')}
           content={this.props.title} />
 
         <EditableField
-          onReady={()=> this.onReady('title')}
           name={'productContent'}
           multiline={true}
           scrollView={this.props.scrollView}
+          onChange={(text)=> {
+            this.props.model.set({
+              pruduct_content: text
+            });
+          }}
           onKeyPress={
             (e)=> {
               console.log(e);
@@ -103,7 +96,11 @@ export default class EditableBakeProduct extends React.Component {
             scrollView={this.props.scrollView}
             onReady={()=> this.onReady('unit')}
             content={this.props.unit} />
-
+            onChange={(text)=> {
+              this.props.model.set({
+                pruduct_unit: text
+              });
+            }}
             <EditableField
               onKeyPress={
                 (e)=> {
@@ -112,6 +109,11 @@ export default class EditableBakeProduct extends React.Component {
               }
               type={'price'}
               name={'productPrice'}
+              onChange={(text)=> {
+                this.props.model.set({
+                  pruduct_price: text
+                });
+              }}
               scrollView={this.props.scrollView}
               onReady={()=> this.onReady('price')}
               content={this.props.price} />

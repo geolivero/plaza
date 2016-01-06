@@ -433,8 +433,10 @@ export default class User extends React.Component {
           return(
             <View>
               <Text style={[ DEFCSS.sansc, styles.title ]}>DIENST INFORMATIE</Text>
+
               <EditableBakeProduct
                 onReady={()=>{}}
+                model={this.props.model}
                 scrollView={this.refs.mainScroller}
                 description={'Dienst beschrijving'}
                 unit={'Dienst eenheid'}
