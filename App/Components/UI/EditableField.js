@@ -49,22 +49,23 @@ export default class EditableField extends React.Component {
   renderField() {
     return (
       <TextField
-        onChange={(text)=> {
-
+        onChange={(data)=> {
+          this.props.onChange(data)
         }}
         onKeyPress={(e)=> {
           if (this.props.onKeyPress) {
             this.props.onKeyPress(e)
           }
         }}
+        clearButton={true}
         autoFocus={true}
         type={this.props.type}
         onDone={(text)=> this.doneEditing(text) }
         multiline={this.props.multiline}
         name={this.props.name}
         scrollView={this.props.scrollView}
-        value={this.state.content}
-        placeholder={this.state.content} />
+        value={this.state.content || this.state.placeholder}
+        placeholder={this.state.placeholder} />
     );
   }
 

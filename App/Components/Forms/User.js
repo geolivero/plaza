@@ -12,6 +12,7 @@ import ProfileAssets from '././../UI/ProfileAssets';
 import FormAddress from './Address';
 import ListPicker from './../UI/ListPicker';
 import EditableBakeProduct from './../Widgets/EditableBakeProduct';
+import PinkBtn from './../UI/PinkButton';
 
 
 var {
@@ -38,10 +39,13 @@ export default class User extends React.Component {
       shiftUp: new Animated.Value(Settings.box.height),
       text: '',
       step: 0,
+      percValue: 0,
+      percWidth: 0,
       logoSource: false,
       username: this.props.model.get('name') || '',
       allowed: false,
       emailText: '',
+      finished: '',
       passwText: ''
     };
   }
@@ -75,14 +79,29 @@ export default class User extends React.Component {
       this.setState({
         step: STEP ? parseInt(STEP) : 0
       });
+
+      this.calcPerc();
     });
 
+    
 
   }
 
   onModelChange(model) {
     //console.log('model changed');
     //console.log(this.props.model);
+  }
+
+  calcPerc() {
+    let total = this.stepForm().length - 1;
+    let step = this.state.step * (Settings.box.width / total);
+    let X = step - 35;
+    this.setState({
+      percWidth: step,
+      percValue: Math.ceil((this.state.step / total) * 100),
+      percLabelX: this.state.step === 0 ? 0 : X,
+      stepEnd: this.state.step === total
+    });
   }
 
   next() {
@@ -119,6 +138,7 @@ export default class User extends React.Component {
     });
 
     Helpers.userStep.save(step);
+    this.calcPerc();
   }
 
   saveData() {
@@ -128,6 +148,7 @@ export default class User extends React.Component {
       case 0:
         // create new user
         Helpers.getToken((token)=> {
+          console.log('get a nre token, ', token);
           this.props.model.setToken(token);
 
           this.props.model.save({}, {
@@ -161,7 +182,7 @@ export default class User extends React.Component {
 
       default:
         this.setState({
-          isSaving: true
+          isSaving: false
         });
 
 
@@ -191,7 +212,25 @@ export default class User extends React.Component {
                 this.saveModel(SESSIONDATA);
               }
             });
-
+          } else if(this.props.model.get('type') === 'bakerproduct') {
+            FileUpload.upload(Helpers.setFileOptions(SESSIONDATA, [
+              {
+                filename: this.props.model.get('product_file') + '.jpg',
+                filepath: this.props.model.get('file'),
+                filetype: 'image/jpeg',
+              }
+            ]), (err, result) => {
+              if (err) {
+                console.log(err);
+                //@todo: fix error messages
+              } else {
+                console.log(result.data);
+                this.props.model.set({
+                  product_fid: JSON.parse(result.data)
+                });
+                this.saveModel(SESSIONDATA);
+              }
+            });
           } else {
             this.saveModel(SESSIONDATA);
           }
@@ -231,6 +270,13 @@ export default class User extends React.Component {
         if (this.state.validated) {
           this.createUser();
           this.saveData();
+        }
+        break;
+      default:
+        if(this.props.model.get('type') === 'bakerproduct') {
+          if (this.state.validated) {
+            this.saveData();
+          }
         }
         break;
     }
@@ -437,11 +483,51 @@ export default class User extends React.Component {
               <EditableBakeProduct
                 onReady={()=>{}}
                 model={this.props.model}
+                validated={(validated)=> {
+                  this.setState({
+                    validated: validated
+                  });
+                }}
                 scrollView={this.refs.mainScroller}
                 description={'Dienst beschrijving'}
                 unit={'Dienst eenheid'}
                 price={'Dienst prijs'}
                 title={'Titel dienst'}/>
+            </View>
+          );
+        },
+        messages: () => {
+          return(
+            <Messages
+              onOk={ ()=> this.onOk() }
+              onCancel={ ()=> this.onOk() }
+              MessageContent={'Dienst naam is verplicht'}
+              MessageHeader={'Dienst!'}/>
+          );
+        }
+      },
+      {
+        render: ()=> {
+
+          return(
+            <View style={[styles.finish]}>
+            <Image
+                style={styles.successIcon}
+                source={require('./../../../images/boot_icon.png')}/>
+              <Text style={[ DEFCSS.sansc, styles.title ]}>
+                GEFELICITEERD
+              </Text>
+              <Text style={[
+                DEFCSS.paragraph, 
+                {textAlign: 'center', marginBottom: 20 }
+                ]}>
+                Je hebt alle belanrijke velden ingevuld
+ga snel en bekijk jouw account en ga verder met pimpen!
+              </Text>
+              <PinkBtn 
+                onPress={()=> this.gotoUserAccount(this.props.model)} 
+                label={'Bekijk jouw account'}
+                icon={'eye'} />
             </View>
           );
         }
@@ -453,6 +539,7 @@ export default class User extends React.Component {
 
     return(
       <View style={[styles.wrapper]}>
+        
         <Animated.View style={[
           styles.container,
             {
@@ -461,15 +548,25 @@ export default class User extends React.Component {
               }]
             }
           ]}>
-          <View style={styles.arrowBtnBack}>
-            <TouchableOpacity onPress={() => { this.onBack() }}>
-              <Icon
-                name='fontawesome|angle-left'
-                size={22}
-                color={Settings.colors.darkBrown}
-                style={[styles.buttons]} />
-            </TouchableOpacity>
-          </View>
+          
+          
+          
+
+          {()=>{
+            if (!this.state.stepEnd) {
+              return(
+                <View style={styles.arrowBtnBack}>
+                  <TouchableOpacity onPress={() => { this.onBack() }}>
+                    <Icon
+                      name='fontawesome|angle-left'
+                      size={22}
+                      color={Settings.colors.darkBrown}
+                      style={[styles.buttons]} />
+                  </TouchableOpacity>
+                </View>
+              );
+            }
+          }()}
 
           <ScrollView
             ref={'mainScroller'}
@@ -479,17 +576,27 @@ export default class User extends React.Component {
 
 
           </ScrollView>
+          {()=>{
+            if (!this.state.stepEnd) {
+              return(
+                <TouchableOpacity onPress={() => { this.next(); }}>
+                  <View style={[styles.largeBtn]}>
+                    <Text style={[ DEFCSS.sansc, styles.largeBtnTxt ]}>{'VOLGENDE'}</Text>
+                    <Icon
+                      name='fontawesome|angle-right'
+                      size={22}
+                      color={Settings.colors.white}
+                      style={[styles.buttons]} />
+                  </View>
+                </TouchableOpacity>
+              );
+            }
+          }()}
 
-          <TouchableOpacity onPress={() => { this.next(); }}>
-            <View style={[styles.largeBtn]}>
-              <Text style={[ DEFCSS.sansc, styles.largeBtnTxt ]}>{'VOLGENDE'}</Text>
-              <Icon
-                name='fontawesome|angle-right'
-                size={22}
-                color={Settings.colors.white}
-                style={[styles.buttons]} />
-            </View>
-          </TouchableOpacity>
+          <View style={styles.percentageUI}>
+            <View style={[styles.percentageBar, { width: this.state.percWidth }]} />
+            <Text style={[DEFCSS.sansc, styles.percLabel, { left: this.state.percLabelX }]}>{`${this.state.percValue}%`}</Text>
+          </View>
 
         </Animated.View>
 
@@ -519,6 +626,17 @@ var styles = StyleSheet.create({
     bottom: 0,
     right: 0
   },
+  finish: {
+    alignItems: 'center',
+    padding: 20
+  },
+  successIcon: {
+    width: 166,
+    height: 166,
+    marginBottom: 20,
+    marginTop: 30,
+    alignSelf: 'center'
+  },
   formContainer: {
     flex: 1
   },
@@ -538,6 +656,23 @@ var styles = StyleSheet.create({
     width: 30,
     height: 30
   },
+  percentageBar: {
+    height: 5,
+    position: 'relative',
+    backgroundColor: Settings.colors.green
+  },
+  percLabel: {
+    position: 'absolute',
+    left: 0,
+    top: 5,
+    color: Settings.colors.darkBrown
+  },
+  percentageUI: {
+    position: 'absolute',
+    left: 0, top: 0,
+    right: 0,
+    height: 30
+  },
   largeBtn: {
     flex: 1,
     height: 60,
@@ -554,7 +689,10 @@ var styles = StyleSheet.create({
     fontSize: 20
   },
   scrollView: {
-    flex: 1
+    flex: 1,
+    position: 'relative',
+    top: 10,
+    left: 0
   },
   title: {
     fontSize: 30,

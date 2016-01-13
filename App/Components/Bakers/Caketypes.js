@@ -2,7 +2,7 @@
 
 var React = require('react-native');
 var Backbone = require('backbonereactnative');
-var _ = Backbone._;
+var _ = require('underscore');
 var DEFCSS = require('./../../Styles/Default');
 var Helpers = require('./../../Helpers');
 var Settings = require('./../../../Settings');
@@ -83,6 +83,7 @@ var beschrijving = React.createClass({
 
   renderList() {
     var list = [];
+    console.log(this.props.model.attributes);
     _.map(this.props.model.get('terms'), (term, i)=> {
       list.push(
         <Text key={i} style={[DEFCSS.sansc, styles.innerConent]}>
@@ -95,7 +96,7 @@ var beschrijving = React.createClass({
 
   render() {
     //console.log(this.props.model);
-  
+
     return (
       <View style={[styles.popup, DEFCSS.oDarkBg]}>
         <View style={[styles.panelPopup]}>
@@ -103,18 +104,18 @@ var beschrijving = React.createClass({
             <Text style={[DEFCSS.sansc, styles.headerTitle]}>{'Wat bak ik?'}</Text>
             <CloseBtn onPress={this.closePopup} />
           </View>
-          <ScrollView 
-            contentContainerStyle={DEFCSS.scrollContainer} 
+          <ScrollView
+            contentContainerStyle={DEFCSS.scrollContainer}
             style={[ styles.contentEL, DEFCSS.whiteBg ]}>
             <View style={[styles.adress]}>
               {this.renderList()}
-              
+
             </View>
 
-            
+
           </ScrollView>
-          
-          
+
+
         </View>
       </View>
     );

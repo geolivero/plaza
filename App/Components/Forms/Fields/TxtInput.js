@@ -150,56 +150,107 @@ export default class TxtInput extends React.Component {
   }
 
   inputFocused () {
-    setTimeout(() => {
-      let scrollResponder = this.props.scrollView.getScrollResponder();
-      scrollResponder.scrollResponderScrollNativeHandleToKeyboard(
-        React.findNodeHandle(this.refs[this.props.name]),
-        50, //additionalOffset
-        true
-      );
-    }, 50);
+    if (this.props.scrollView) {
+      setTimeout(() => {
+        let scrollResponder = this.props.scrollView.getScrollResponder();
+        scrollResponder.scrollResponderScrollNativeHandleToKeyboard(
+          React.findNodeHandle(this.refs[this.props.name]),
+          50, //additionalOffset
+          true
+        );
+      }, 50);
+    }
   }
 
   render() {
-    return(
-      <View style={styles.row}>
-      <TextInput
-        style={[styles.field, DEFCSS.sans, (this.props.multiline ? styles.fieldMulti : {})]}
-        multiline={this.props.multiline}
-        secureTextEntry={ this.props.type === 'password' ? this.state.passSwapper : false }
-        autoFocus={this.props.autoFocus}
-        autoCapitalize={(this.props.type === 'title') ? 'characters' : 'none'}
-        onChangeText={(text) => {
-          this.setState({ txt: text.toLowerCase() });
-          //this.onChange();
-          this.props.onChange({
-            text: text.toLowerCase(),
-            validated: this.validated()
-          });
-        }}
-        ref={this.props.name}
-        onFocus={this.inputFocused.bind(this)}
-        onKeyPress={
-          (e)=> {
-            console.log(e);
-            if (this.props.onKeyPress) {
-              this.props.onKeyPress(e);
+    if (this.props.multiline) {
+      return(
+        <View style={styles.row}>
+        <TextInput
+          style={[styles.field, DEFCSS.sans, (this.props.multiline ? styles.fieldMulti : {})]}
+          multiline={this.props.multiline}
+          secureTextEntry={ this.props.type === 'password' ? this.state.passSwapper : false }
+          autoFocus={this.props.autoFocus}
+          autoCapitalize={(this.props.type === 'title') ? 'characters' : 'none'}
+          clearButtonMode={(this.props.clearButton) ? 'always' : 'never'}
+          onChangeText={(text) => {
+            this.setState({ txt: text });
+            //this.onChange();
+            this.props.onChange({
+              text: text,
+              validated: this.validated()
+            });
+          }}
+          ref={this.props.name}
+          onFocus={this.inputFocused.bind(this)}
+          onKeyPress={
+            (e)=> {
+              console.log(e);
+              if (this.props.onKeyPress) {
+                this.props.onKeyPress(e);
+              }
             }
           }
-        }
-        onBlur={(e) => {
-          e.text = this.state.txt;
-          e.validated = this.validated();
-          this.props.onChange(e);
-        }}
-        placeholder={this.props.placeholder}
-        keyboardType={this.getType()}
-        value={this.state.txt} />
+          onBlur={(e) => {
+            e.text = this.state.txt;
+            e.validated = this.validated();
+          }}
+          placeholder={this.props.placeholder}
+          keyboardType={this.getType()}
+          value={this.state.txt} />
 
-      {this.getMessage()}
-      </View>
+        {this.getMessage()}
+        </View>
 
-    );
+      );
+    } else {
+      return(
+        <View style={styles.row}>
+        <TextInput
+          style={[styles.field, DEFCSS.sans, (this.props.multiline ? styles.fieldMulti : {})]}
+          multiline={this.props.multiline}
+          secureTextEntry={ this.props.type === 'password' ? this.state.passSwapper : false }
+          autoFocus={this.props.autoFocus}
+          autoCapitalize={(this.props.type === 'title') ? 'characters' : 'none'}
+          clearButtonMode={(this.props.clearButton) ? 'always' : 'never'}
+          onSubmitEditing={()=> {
+            this.props.onChange({
+              text: this.state.txt,
+              validated: this.validated()
+            });
+          }}
+          onChangeText={(text) => {
+            this.setState({ txt: text });
+            //this.onChange();
+            this.props.onChange({
+              text: text,
+              validated: this.validated()
+            });
+          }}
+          ref={this.props.name}
+          onFocus={this.inputFocused.bind(this)}
+          onKeyPress={
+            (e)=> {
+              console.log(e);
+              if (this.props.onKeyPress) {
+                this.props.onKeyPress(e);
+              }
+            }
+          }
+          onBlur={(e) => {
+            e.text = this.state.txt;
+            e.validated = this.validated();
+          }}
+          placeholder={this.props.placeholder}
+          keyboardType={this.getType()}
+          value={this.state.txt} />
+
+        {this.getMessage()}
+        </View>
+
+      );
+    }
+
   }
 }
 

@@ -1,4 +1,3 @@
-'use strict';
 var React = require('react-native');
 var Dimensions = require('Dimensions');
 var windowSize = Dimensions.get('window');
@@ -54,6 +53,10 @@ module.exports = StyleSheet.create({
     backgroundColor: 'transparent',
     width: windowSize.width,
     height: windowSize.height
+  },
+  paragraph: {
+    color: '#AE7979',
+    fontSize: 14
   },
   pinkBg: { 
     backgroundColor: Settings.colors.lightPink,

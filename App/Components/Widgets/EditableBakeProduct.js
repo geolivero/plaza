@@ -45,6 +45,22 @@ export default class EditableBakeProduct extends React.Component {
     });
   }
 
+  onReady(data = { text: '' }, prop = '') {
+
+    if (typeof data.text === 'string') {
+      if (prop === 'title') {
+        this.props.model.set({
+          product_file: data.text.replace(/\s/g, '_').toLowerCase(),
+        });
+        this.props.validated(data.text.length > 0);
+      }
+      this.props.model.set({
+        type: 'bakerproduct',
+      });
+      this.props.model.set('product_' + prop, this.props[prop] === data.text ? '' : data.text);
+    }
+  }
+
   render() {
     return(
       <View style={[styles.container]}>
@@ -57,49 +73,41 @@ export default class EditableBakeProduct extends React.Component {
         <EditableField
           name={'productTitle'}
           type={'title'}
-          onChange={(text)=> {
-            this.setState({
-              title: text.replace(/\s/g, '_').toLowerCase()
-            });
-            this.props.model.set({
-              pruduct_title: text
-            });
+          onChange={(data)=> {
+            this.onReady(data, 'title');
           }}
           scrollView={this.props.scrollView}
-          content={this.props.title} />
+          placeholder={this.props.title}
+          content={this.props.model.get('product_title') || ''} />
 
         <EditableField
           name={'productContent'}
           multiline={true}
           scrollView={this.props.scrollView}
-          onChange={(text)=> {
-            this.props.model.set({
-              pruduct_content: text
-            });
+          onChange={(data)=> {
+            this.onReady(data, 'description');
           }}
-          content={this.props.description} />
+          placeholder={this.props.description}
+          content={this.props.model.get('product_description') || ''} />
 
           <EditableField
             name={'productUnit'}
             scrollView={this.props.scrollView}
-            onReady={()=> this.onReady('unit')}
-            content={this.props.unit}
-            onChange={(text)=> {
-              this.props.model.set({
-                pruduct_unit: text
-              });
+            content={this.props.model.get('product_unit') || ''}
+            placeholder={this.props.unit}
+            onChange={(data)=> {
+              this.onReady(data, 'unit');
             }}/>
-            <EditableField
-              type={'price'}
-              name={'productPrice'}
-              onChange={(text)=> {
-                this.props.model.set({
-                  pruduct_price: text
-                });
-              }}
-              scrollView={this.props.scrollView}
-              onReady={()=> this.onReady('price')}
-              content={this.props.price} />
+
+          <EditableField
+            type={'price'}
+            name={'productPrice'}
+            onChange={(data)=> {
+              this.onReady(data, 'price');
+            }}
+            scrollView={this.props.scrollView}
+            placeholder={this.props.price}
+            content={this.props.model.get('product_price') || ''} />
       </View>
     );
   }

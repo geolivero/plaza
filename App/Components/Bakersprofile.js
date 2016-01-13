@@ -1,5 +1,3 @@
-'use strict';
-
 var React = require('react-native');
 var _ = require('underscore');
 var DEFCSS = require('./../Styles/Default');
@@ -62,14 +60,14 @@ var bakers = React.createClass({
       _.each(lists, (list) => {
         if (typeof(list) === 'object') {
           galerieList.push(list);
-        }  
+        }
       });
     }
     this.collection.reset(galerieList);
     this.setState({
       collection: this.state.collection.cloneWithRows(this.collection.models)
     });
-    
+
   },
   onPopUpClose() {
     this.setState({
@@ -86,7 +84,7 @@ var bakers = React.createClass({
     var uid = this.props.model.get('uid');
     this.model = new GalerieList.model();
     this.collection = new GalerieList.collection();
-    
+
     Helpers.getToken((token)=> {
       this.model.setToken(token);
       this.model.set({id: uid, uid: uid });
@@ -105,9 +103,9 @@ var bakers = React.createClass({
 
   renderPrice(model) {
     if (model.get('field_price_value')) {
-      
+
       return (
-        
+
         <View style={[ styles.priceContainer ]}>
           <Text style={[DEFCSS.sansc, styles.priceLabel, DEFCSS.darkColor]}>
             {model.get('field_price_type_value')}
@@ -140,17 +138,17 @@ var bakers = React.createClass({
   renderProduct: function (model) {
     return (
         <View key={model.get('nid')} style={[DEFCSS.whiteBg]}>
-        
-        <ScrollView 
+
+        <ScrollView
           contentContainerStyle={DEFCSS.scrollContainer}
-          pagingEnabled={true} 
+          pagingEnabled={true}
           style={[ styles.productRow ]}
           horizontal={true} >
 
           <View key={model.get('nid')} style={[DEFCSS.whiteBg]}>
               <Text style={[styles.rowBakerTxt, DEFCSS.whiteBg, DEFCSS.sansc ]}>{model.get('title')}</Text>
               <TouchableHighlight onPress={() => this.openImageGalerie(model.get('cake_pic'))}>
-                <Image style={[DEFCSS.darkBg, styles.cakeImg]} 
+                <Image style={[DEFCSS.darkBg, styles.cakeImg]}
                   source={{uri: model.get('cake_pic')}}
                   resizeMode={'cover'}
                   capInsets={{left: 0, top: 0}} />
@@ -158,14 +156,14 @@ var bakers = React.createClass({
           </View>
           <View style={styles.slide2}>
             <View style={[DEFCSS.rowBakerLogo, DEFCSS.darkBg, {alignSelf: 'center', marginTop: 10}]}>
-              <Image style={[styles.miniCakeImg]} 
+              <Image style={[styles.miniCakeImg]}
                 source={{uri: model.get('cake_pic')}}
                 resizeMode={'cover'}
                 capInsets={{left: 0, top: 0}} />
             </View>
 
-            <ScrollView 
-              contentContainerStyle={DEFCSS.scrollContainer} 
+            <ScrollView
+              contentContainerStyle={DEFCSS.scrollContainer}
               style={[ styles.descripContainer ]}>
                 <Text style={[styles.bakersContent, DEFCSS.sansc, DEFCSS.darkColor ]}>{model.get('plain_text')}</Text>
             </ScrollView>
@@ -173,8 +171,8 @@ var bakers = React.createClass({
 
         </ScrollView>
 
-        
-          
+
+
         {this.renderPrice(model)}
 
         </View>
@@ -199,8 +197,8 @@ var bakers = React.createClass({
         <View key={model.get('nid')} style={[DEFCSS.whiteBg, styles.row]}>
           <Text style={[styles.rowBakerTxt, DEFCSS.whiteBg, DEFCSS.sansc ]}>{model.get('title')}</Text>
             <TouchableHighlight onPress={() => this.openImageGalerie(model.get('cake_pic'))}>
-            <Image style={[DEFCSS.darkBg, styles.cakeImg]} 
-              source={{uri: model.get('cake_pic')}} 
+            <Image style={[DEFCSS.darkBg, styles.cakeImg]}
+              source={{uri: model.get('cake_pic')}}
               resizeMode={'cover'}
               capInsets={{left: 0, top: 0}} />
             </TouchableHighlight>
@@ -244,7 +242,7 @@ var bakers = React.createClass({
     }
     return (
           <View style={[ styles.lastContainer, DEFCSS.oDarkBgLight ]}>
-            <Image 
+            <Image
               style={[DEFCSS.rowBakerLogo, styles.bakersLogo , styles.logoFooter]}
               source={{uri: this.props.model.get('logo')}}  />
             <Text style={[DEFCSS.sansc, DEFCSS.whiteColor, styles.footerTitle ]}>{this.getBakersCompanyName()}</Text>
@@ -254,13 +252,13 @@ var bakers = React.createClass({
 
   renderBgImage(model) {
     if (this.props.model.get('bgimage')) {
-      return (<Image 
-          style={[styles.bakers_bg]} 
+      return (<Image
+          style={[styles.bakers_bg]}
           resizeMode={'cover'}
           source={{uri: this.props.model.get('bgimage')}} />
         );
     }
-    return (<Image 
+    return (<Image
         style={[styles.bakers_bg]}
         resizeMode={'cover'}
         source={require('../../images/defaultpic.png')} />);
@@ -273,47 +271,47 @@ var bakers = React.createClass({
     return (
       <View style={[styles.container]}>
         {this.renderBgImage(this.props.model)}
-        
-        <ScrollView 
-          contentContainerStyle={DEFCSS.scrollContainer} 
+
+        <ScrollView
+          contentContainerStyle={DEFCSS.scrollContainer}
           style={[ DEFCSS.contentContainer, DEFCSS.contentScroller ]}>
 
           <View style={DEFCSS.bgSpacer} />
-          <PinkHeader 
-            title={(this.props.model.get('field_bedrijfsnaam_value') || this.props.model.get('field_naam_value')).toUpperCase()} 
+          <PinkHeader
+            title={(this.props.model.get('field_bedrijfsnaam_value') || this.props.model.get('name')).toUpperCase()} 
             subTitle={'get your cake on!'} />
 
           <View>
           <View style={[DEFCSS.rowBakerLogoPlaceHolder, styles.bakersLogo]}>
-            <Image 
-            style={[DEFCSS.rowBakerLogo]} 
+            <Image
+            style={[DEFCSS.rowBakerLogo]}
             source={{uri: this.props.model.get('logo')}} />
             </View>
           </View>
-          
+
           {this.renderArrow()}
-          <ListView 
-            scrollEnabled={false} 
+          <ListView
+            scrollEnabled={false}
             style={[DEFCSS.whiteBg]}
             automaticallyAdjustContentInsets={false}
             dataSource={this.state.collection} renderRow={this.getProduct} />
           <LoaderBar ref={'loaderBar'} />
           {this.renderFooter()}
-          
+
         </ScrollView>
 
 
-        <Toolbar 
-          showBackBtn={true} 
+        <Toolbar
+          showBackBtn={true}
           onPress={this.goBack}
           collection={this.props.collection}
           navigator={this.props.navigator}
           title={this.getBakersCompanyName()} />
         <View ref={'toolBar'} style={[ DEFCSS.oWhiteBg, styles.toolBar]}>
 
-          
+
           {()=> {
-            if (this.props.model.get('lat') && this.props.model.get('lng')) {            
+            if (this.props.model.get('lat') && this.props.model.get('lng')) {
               return (
                 <TouchableHighlight onPress={ this.openMap }>
                   <Icon
@@ -325,8 +323,8 @@ var bakers = React.createClass({
               )
             }
           }()}
-          
-          
+
+
           <TouchableHighlight onPress={() => this.openBakersDetails('contact')}>
           <Icon
               name='fontawesome|book'
@@ -423,7 +421,7 @@ var styles = StyleSheet.create({
     height:  windowSize.width,
     top: 0
   },
-  
+
   rowBakerTxt: {
     fontSize: 20,
     margin: 10
@@ -474,6 +472,6 @@ var styles = StyleSheet.create({
     paddingBottom: 5
   },
   priceContainer: {
-    alignSelf: 'flex-start' 
+    alignSelf: 'flex-start'
   }
 });

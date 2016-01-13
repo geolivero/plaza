@@ -173,8 +173,8 @@ var home = React.createClass({
         StatusBarIOS.setStyle('light-content');
     }
 
-    //Helpers.userToken.destroy();
-    //Helpers.userStep.destroy();
+    Helpers.userToken.destroy();
+    Helpers.userStep.destroy();
     
     this.fetchCollection();
     //To cancel the arrow animation
