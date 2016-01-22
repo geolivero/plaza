@@ -278,7 +278,7 @@ var bakers = React.createClass({
 
           <View style={DEFCSS.bgSpacer} />
           <PinkHeader
-            title={(this.props.model.get('field_bedrijfsnaam_value') || this.props.model.get('name')).toUpperCase()} 
+            title={(this.props.model.get('field_bedrijfsnaam_value') || this.props.model.get('name')).toUpperCase()}
             subTitle={'get your cake on!'} />
 
           <View>

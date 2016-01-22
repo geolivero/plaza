@@ -48,7 +48,7 @@ export default class Address extends React.Component {
   }
 
   componentDidMount() {
-    
+
   }
 
   getLocation(e) {
@@ -75,13 +75,13 @@ export default class Address extends React.Component {
   }
 
   fillForm(index) {
-    
+
     var location = this.state.addresses[index],
       n,
       newLocation = {};
 
     _.each(location.address_components, (item, i)=> {
-      
+
       newLocation[item.types[0]] = item.long_name;
     });
 
@@ -90,10 +90,10 @@ export default class Address extends React.Component {
       list: []
     });
 
-    this.refs['straat'].updateField();
-    this.refs['huisnr'].updateField();
-    this.refs['postcode'].updateField();
-    this.refs['plaats'].updateField();
+    this.ref.straat.updateField();
+    this.ref.huisnr.updateField();
+    this.ref.postcode.updateField();
+    this.ref.plaats.updateField();
 
     console.log(newLocation);
   }
@@ -125,10 +125,11 @@ export default class Address extends React.Component {
         }()}
         <Text style={[ DEFCSS.sansc, styles.of]}>{'-of-'}</Text>
         <TxtInput
+              scrollView={this.props.scrollView}
               type={'default'}
               key='straat'
               notRequired={true}
-              onChange={(e)=> { 
+              onChange={(e)=> {
                 if (e.text.length) {
                   this.props.model.set({
                     type: 'adres',
@@ -137,15 +138,18 @@ export default class Address extends React.Component {
                   this.props.onReady(this.props.model);
                 }
               }}
+              name={'straat'}
               ref={'straat'}
               value={this.state.newAddress.route}
               placeholder={'Straat'}/>
         <TxtInput
+              scrollView={this.props.scrollView}
               type={'default'}
               key='huisnummer'
+              name={'huisnummer'}
               value={this.state.newAddress.street_number}
               notRequired={true}
-              onChange={(e)=> { 
+              onChange={(e)=> {
                 if (e.text.length) {
                   this.props.model.set({
                     type: 'adres',
@@ -157,11 +161,13 @@ export default class Address extends React.Component {
               ref={'huisnr'}
               placeholder={'Huisnummer'}/>
         <TxtInput
+              scrollView={this.props.scrollView}
               type={'default'}
               key='postcode'
+              name={'postcode'}
               value={this.state.newAddress.postal_code}
               notRequired={true}
-              onChange={(e)=> { 
+              onChange={(e)=> {
                 if (e.text.length) {
                   this.props.model.set({
                     type: 'adres',
@@ -173,11 +179,13 @@ export default class Address extends React.Component {
               ref={'postcode'}
               placeholder={'Postcode'}/>
         <TxtInput
+              scrollView={this.props.scrollView}
               type={'default'}
               key='plaats'
+              name={'plaats'}
               value={this.state.newAddress.locality}
               notRequired={true}
-              onChange={(e)=> { 
+              onChange={(e)=> {
                 if (e.text.length) {
                   this.props.model.set({
                     type: 'adres',
@@ -189,7 +197,7 @@ export default class Address extends React.Component {
               }}
               ref={'plaats'}
               placeholder={'Plaats'}/>
-        
+
       </View>
     );
   }

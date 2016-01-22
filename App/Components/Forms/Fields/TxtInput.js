@@ -33,11 +33,13 @@ export default class TxtInput extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.value);
+
     this.setState({
       txt: this.props.value || '',
       notRequired: this.props.notRequired
     });
+
+    //console.log(this.props.value);
 
     DeviceEventEmitter.addListener('keyboardWillHide', this.keyboardWillHide.bind(this));
   }
@@ -70,6 +72,12 @@ export default class TxtInput extends React.Component {
   }
 
   keyboardWillHide() {
+    if (this.props.onDone && this.state.txt.length > 0) {
+      this.props.onDone(this.state.txt);
+    }
+  }
+
+  onBlur() {
     if (this.props.onDone) {
       this.props.onDone(this.state.txt);
     }
@@ -151,6 +159,7 @@ export default class TxtInput extends React.Component {
 
   inputFocused () {
     if (this.props.scrollView) {
+      console.log('scrollView found');
       setTimeout(() => {
         let scrollResponder = this.props.scrollView.getScrollResponder();
         scrollResponder.scrollResponderScrollNativeHandleToKeyboard(
@@ -175,7 +184,6 @@ export default class TxtInput extends React.Component {
           clearButtonMode={(this.props.clearButton) ? 'always' : 'never'}
           onChangeText={(text) => {
             this.setState({ txt: text });
-            //this.onChange();
             this.props.onChange({
               text: text,
               validated: this.validated()

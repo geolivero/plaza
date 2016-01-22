@@ -58,9 +58,6 @@ export default class User extends React.Component {
       }
     ).start();
 
-    this.props.model.on('change', (model)=> {
-      this.onModelChange(model);
-    });
 
     Helpers.userToken.get((SESSIONDATA)=> {
       if (SESSIONDATA) {
@@ -69,7 +66,9 @@ export default class User extends React.Component {
         console.log(this.props.model.attributes);
         this.setState({
           username: this.props.model.get('name'),
-          logoSource: this.props.model.get('field_logo').length ? Helpers.getField(this.props.model.get('field_logo'))['0'].full_url : false
+          logoSource: this.props.model.get('field_logo').length ?
+            Helpers.getField(this.props.model.get('field_logo'))['0'].full_url :
+            false
         });
       }
     });
@@ -82,35 +81,36 @@ export default class User extends React.Component {
 
       this.calcPerc();
     });
-
-    
-
   }
 
-  onModelChange(model) {
-    //console.log('model changed');
-    //console.log(this.props.model);
-  }
 
+
+  /**
+   * calcPerc - Set the state of the UI that shows the user signup progress
+   *
+   * @return {type}  null
+   */
   calcPerc() {
-    let total = this.stepForm().length - 1;
-    let step = this.state.step * (Settings.box.width / total);
-    let X = step - 35;
+    let total = this.stepForm().length;
+    let step = (this.state.step + 1) * (Settings.box.width / total);
+    let X = step - 45;
     this.setState({
       percWidth: step,
-      percValue: Math.ceil((this.state.step / total) * 100),
+      percValue: `stap ${(this.state.step + 1)} / ${total}`,
       percLabelX: this.state.step === 0 ? 0 : X,
-      stepEnd: this.state.step === total
+      stepEnd: this.state.step === (total - 1)
     });
   }
 
-  next() {
-    this.setState({
-      showMessage: true
-    });
-    this.saveData();
-  }
 
+
+
+
+  /**
+   * onBack - Exit registration form
+   *
+   * @return {type}  null
+   */
   onBack() {
     Animated.timing(
       this.state.shiftUp,
@@ -123,24 +123,41 @@ export default class User extends React.Component {
   }
 
 
-  createUser() {
-    this.setState({
-      showMessage: true,
-      isSaving: true
-    });
-  }
-
+  /**
+   * onSuccess - after information saved on the server  set the step of the form en disable the message
+   *
+   * @return {type}  null
+   */
   onSuccess() {
     var step = parseInt(this.state.step) + 1;
     this.setState({
       showMessage: false,
+      isSaving: false,
       step: step
     });
 
-    Helpers.userStep.save(step);
+    Helpers.  userStep.save(step);
     this.calcPerc();
   }
 
+  /**
+   * next - Goto the next step in de registration
+   *
+   * @return {type}  null
+   */
+  next() {
+    this.setState({
+      showMessage: true
+    });
+    this.saveData();
+  }
+
+
+  /**
+   * saveData - Save data to the server, you can the current step to change the save behaivior
+   *
+   * @return {type}  null
+   */
   saveData() {
     //this.props.model.setURL('mnguser');
 
@@ -148,13 +165,14 @@ export default class User extends React.Component {
       case 0:
         // create new user
         Helpers.getToken((token)=> {
-          console.log('get a nre token, ', token);
           this.props.model.setToken(token);
 
           this.props.model.save({}, {
 
             success: (model)=> {
-
+              this.setState({
+                validated: false
+              });
               Helpers.login(token, {
                 username: this.props.model.get('email'),
                 password: this.state.passwText
@@ -166,7 +184,7 @@ export default class User extends React.Component {
                   passwText: null,
                   step: 1
                 });
-                this.hideLoadingMessage();
+                this.removeLoadingMessage();
               });
             },
 
@@ -191,6 +209,11 @@ export default class User extends React.Component {
           console.log(SESSIONDATA);
           console.log(this.props.model);
 
+          this.setState({
+            showMessage: true,
+            isSaving: true
+          });
+
 
           if (this.props.model.get('type') === 'userFoto') {
 
@@ -209,9 +232,10 @@ export default class User extends React.Component {
                 this.props.model.set({
                   avatar_fids: JSON.parse(result.data)
                 });
-                this.saveModel(SESSIONDATA);
+                this.saveToServer(SESSIONDATA);
               }
             });
+
           } else if(this.props.model.get('type') === 'bakerproduct') {
             FileUpload.upload(Helpers.setFileOptions(SESSIONDATA, [
               {
@@ -228,11 +252,11 @@ export default class User extends React.Component {
                 this.props.model.set({
                   product_fid: JSON.parse(result.data)
                 });
-                this.saveModel(SESSIONDATA);
+                this.saveToServer(SESSIONDATA);
               }
             });
           } else {
-            this.saveModel(SESSIONDATA);
+            this.saveToServer(SESSIONDATA);
           }
         });
 
@@ -241,26 +265,43 @@ export default class User extends React.Component {
     }
   }
 
-  saveModel(SESSIONDATA) {
+
+  /**
+   * saveToServer - Save data to the server
+   *
+   * @param  {type} SESSIONDATA the current SESSION object dat is saved on disk
+   * @return {type}             null
+   */
+  saveToServer(SESSIONDATA) {
     this.props.model.save({}, {
 
       headers: Helpers.setHeaders(SESSIONDATA),
 
       success: (model)=> {
         console.log(model);
+        this.setState({
+          validated: false
+        });
+
         Helpers.userToken.saveUser(SESSIONDATA, model.attributes);
         this.onSuccess();
-        this.hideLoadingMessage();
+        this.removeLoadingMessage();
       },
 
       error: (model, error)=> {
         console.log(error);
         //@todo: Create an error view
-        this.hideLoadingMessage();
+        this.removeLoadingMessage();
       }
     });
   }
 
+
+  /**
+   * onOk - Action to take after form fields validation
+   *
+   * @return {type}  null
+   */
   onOk() {
     switch(this.state.step) {
       case 0:
@@ -268,7 +309,10 @@ export default class User extends React.Component {
           showMessage: false
         });
         if (this.state.validated) {
-          this.createUser();
+          this.setState({
+            showMessage: true,
+            isSaving: true
+          });
           this.saveData();
         }
         break;
@@ -282,18 +326,26 @@ export default class User extends React.Component {
     }
   }
 
-  onAvatarReady(source) {
-    console.log(source);
-  }
 
-  hideLoadingMessage() {
+  /**
+   * removeLoadingMessage - Sets the state voor the loading widget to remove it from view
+   *
+   * @return {type}  null
+   */
+  removeLoadingMessage() {
     this.setState({
       showMessage: false,
       isSaving: false
     });
   }
 
-  showLoadingMessage() {
+
+  /**
+   * renderLoadingMessage - render the loader widget
+   *
+   * @return {type}  null
+   */
+  renderLoadingMessage() {
     return (
       <Messages
         type={'loader'}
@@ -304,6 +356,11 @@ export default class User extends React.Component {
 
 
 
+  /**
+   * stepForm - Create the wizard form elements array in combination with the message component
+   *
+   * @return {Array}  Render array width objects containing de form en the messages
+   */
   stepForm() {
     return [
         // create an user
@@ -423,8 +480,10 @@ export default class User extends React.Component {
 
               <TxtInput
                 type={'default'}
-                key='username'
+                key='bedrijf'
                 multiline={true}
+                scrollView={this.refs.mainScroller}
+                name={'bedrijf'}
                 onChange={(e)=> {
                   this.props.model.set({
                       type: 'bedrijf',
@@ -453,6 +512,7 @@ export default class User extends React.Component {
 
               <FormAddress
                 ref={'address'}
+                scrollView={this.refs.mainScroller}
                 onReady={(model)=> {
                   console.log(model);
                   console.log(this.props.model);
@@ -518,14 +578,14 @@ export default class User extends React.Component {
                 GEFELICITEERD
               </Text>
               <Text style={[
-                DEFCSS.paragraph, 
+                DEFCSS.paragraph,
                 {textAlign: 'center', marginBottom: 20 }
                 ]}>
                 Je hebt alle belanrijke velden ingevuld
 ga snel en bekijk jouw account en ga verder met pimpen!
               </Text>
-              <PinkBtn 
-                onPress={()=> this.gotoUserAccount(this.props.model)} 
+              <PinkBtn
+                onPress={()=> this.gotoUserAccount(this.props.model)}
                 label={'Bekijk jouw account'}
                 icon={'eye'} />
             </View>
@@ -535,11 +595,19 @@ ga snel en bekijk jouw account en ga verder met pimpen!
     ];
   }
 
+
+
+
+  /**
+   * render - Render the application
+   *
+   * @return {Component}  The view component
+   */
   render() {
 
     return(
       <View style={[styles.wrapper]}>
-        
+
         <Animated.View style={[
           styles.container,
             {
@@ -548,12 +616,13 @@ ga snel en bekijk jouw account en ga verder met pimpen!
               }]
             }
           ]}>
-          
-          
-          
+
+
+
 
           {()=>{
-            if (!this.state.stepEnd) {
+            if (this.state.stepEnd === false) {
+              console.log('render me');
               return(
                 <View style={styles.arrowBtnBack}>
                   <TouchableOpacity onPress={() => { this.onBack() }}>
@@ -577,7 +646,7 @@ ga snel en bekijk jouw account en ga verder met pimpen!
 
           </ScrollView>
           {()=>{
-            if (!this.state.stepEnd) {
+            if (this.state.stepEnd === false) {
               return(
                 <TouchableOpacity onPress={() => { this.next(); }}>
                   <View style={[styles.largeBtn]}>
@@ -595,7 +664,7 @@ ga snel en bekijk jouw account en ga verder met pimpen!
 
           <View style={styles.percentageUI}>
             <View style={[styles.percentageBar, { width: this.state.percWidth }]} />
-            <Text style={[DEFCSS.sansc, styles.percLabel, { left: this.state.percLabelX }]}>{`${this.state.percValue}%`}</Text>
+            <Text style={[DEFCSS.sansc, styles.percLabel, { left: this.state.percLabelX }]}>{`${this.state.percValue}`}</Text>
           </View>
 
         </Animated.View>
@@ -603,7 +672,7 @@ ga snel en bekijk jouw account en ga verder met pimpen!
         {()=> {
           if (this.state.showMessage) {
             if (this.state.isSaving) {
-              return this.showLoadingMessage();
+              return this.renderLoadingMessage();
             } else {
               if (this.stepForm()[this.state.step].messages) {
                 return this.stepForm()[this.state.step].messages();
@@ -617,6 +686,12 @@ ga snel en bekijk jouw account en ga verder met pimpen!
   }
 }
 
+
+
+/**
+ * The styles of the views
+ *
+ */
 var styles = StyleSheet.create({
   wrapper: {
     position: 'absolute',
@@ -659,7 +734,7 @@ var styles = StyleSheet.create({
   percentageBar: {
     height: 5,
     position: 'relative',
-    backgroundColor: Settings.colors.green
+    backgroundColor: Settings.colors.darkPink
   },
   percLabel: {
     position: 'absolute',
@@ -715,7 +790,8 @@ var styles = StyleSheet.create({
   },
   arrowBtnBack: {
     width: 30,
-    height: 30
+    height: 30,
+    marginTop: 20
   },
   buttons: {
     width: 30,

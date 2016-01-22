@@ -99,7 +99,7 @@ export default class EditableField extends React.Component {
             }
           }()}
           <Text style={[DEFCSS.sans, this.getStyles(), styles.contentField]}>
-            {( this.props.type === 'title' ? this.state.content.toUpperCase() : this.state.content )}
+            {( this.props.type === 'title' ? (this.state.content || this.props.placeholder ).toUpperCase() : (this.state.content || this.props.placeholder ) )}
           </Text>
           <Icon
                 name='fontawesome|pencil'

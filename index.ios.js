@@ -8,7 +8,7 @@ var BakersMap = require('./App/Components/Map');
 var Search = require('./App/Components/Search');
 var BakersDemo = require('./App/Components/Demo/DemoBaker');
 var NewUserAccount = require('./App/Components/NewUser');
-
+var Helpers = require('./App/Helpers');
 var {
   AppRegistry,
   StyleSheet,
@@ -75,8 +75,14 @@ var FlatFadeToTheLeft = {
 FlatFloatFromRight.animationInterpolators.out = buildStyleInterpolator(FlatFadeToTheLeft);
 
 var CP = React.createClass({
+  getInitialState() {
+    return {};
+  },
+
   renderScene(route, nav) {
     StatusBarIOS.setHidden(false);
+    this.navigator = nav;
+
     switch(route.id) {
       case 'home':
         return <Home navigator={nav} />;
@@ -105,10 +111,11 @@ var CP = React.createClass({
   render() {
     return (
       <Navigator
-        style={styles.navContainer}
-        initialRoute={{id: 'home'}}
-        configureScene={this.configureScene}
-        renderScene={this.renderScene} />
+      ref="navigator"
+      style={styles.navContainer}
+      initialRoute={{id: 'home' }}
+      configureScene={this.configureScene}
+      renderScene={this.renderScene} />
     );
   }
 
