@@ -77,7 +77,7 @@ token = function(callback) {
     if (session) {
       callback(session.token);
     } else {
-      fetch(Settings.REST.root + 'users')
+      fetch(Settings.REST.root + 'services/session/token')
         .then((response) => {
           return response.text();
         })
@@ -122,7 +122,7 @@ module.exports.getField = function (model) {
   } else {
     return {'0': {}};
   }
-  
+
 };
 
 module.exports.userStep = userRegisterSteps;

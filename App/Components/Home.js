@@ -44,6 +44,7 @@ var home = React.createClass({
       fixedTop: false,
       bakerHeaderTop: 0,
       bakerHeaderY: 0,
+      session: false,
       dataLoaded: false,
       userModel: false,
       loggedIn: false,
@@ -116,7 +117,8 @@ var home = React.createClass({
         if (STEP && parseInt(STEP) === 7 && SESSIONDATA) {
           this.setState({
             loggedIn: true,
-            userModel: SESSIONDATA.user
+            userModel: SESSIONDATA.user,
+            session: SESSIONDATA
           });
         }
       });
@@ -138,10 +140,7 @@ var home = React.createClass({
       fetch(this.state.collection.url).then((response)=> {
         return response.json();
       }).then((jsonData) => {
-        console.log('called json');
         this.state.collection.set(jsonData);
-        //console.log(jsonData);
-        console.log('json');
         if (!this.state.loggedIn) {
           this.setHomeCollection();
         }
@@ -160,6 +159,7 @@ var home = React.createClass({
   componentWillUnmount: function () {
     backboneReact.off(this);
   },
+
   renderBaker: function (model) {
     return (
       <Baker model={model} onPress={()=> this.openBakersProfile(model)} />
@@ -202,7 +202,7 @@ var home = React.createClass({
 
   renderHomeNotLoggedIn() {
     return (
-      <View style={[styles.container]}>
+      <View style={[ styles.homeContainer]}>
         <Image style={[styles.mainImage, { top: this.state.mImgTop, transform: [{ scale: this.state.mImgScale }] } ]}
           source={require('../../images/bgHome.png')} />
         <Image onClick={()=> alert('clicked')} style={[styles.logo, {
@@ -251,7 +251,7 @@ var home = React.createClass({
 
   renderHomeLoggedIn() {
     return (
-      <Dashboard model={this.state.userModel} />
+      <Dashboard collection={this.state.collection} navigator={this.props.navigator} session={this.state.session} />
     );
   },
 
@@ -275,19 +275,25 @@ var home = React.createClass({
 
 var styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   mainImage: {
     position: 'absolute',
     left: 0,
     top: 0,
-    width: windowSize.width,
-    height: windowSize.height
+    width: Settings.box.width,
+    height: Settings.box.height
+  },
+  homeContainer: {
+    justifyContent: 'center',
+    width: Settings.box.width,
+    height: Settings.box.height
   },
   logo: {
     width: 111,
     backgroundColor: 'transparent',
     resizeMode: 'contain',
+    alignSelf: 'center',
     height: 122
   },
   scrollContainer: {

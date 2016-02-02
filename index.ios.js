@@ -87,7 +87,7 @@ var CP = React.createClass({
       case 'home':
         return <Home navigator={nav} />;
       case 'bakersprofile':
-        return <BakersProfile collection={route.collection} model={route.model} navigator={nav} />;
+        return <BakersProfile editable={route.editable} collection={route.collection} model={route.model} navigator={nav} />;
       case 'bakersgalerie':
         return <PicturePopup onClose={route.onClose} imgURL={route.imgURL} navigator={nav} />;
       case 'bakersmap':

@@ -35,7 +35,7 @@ var arrow = React.createClass({
     });
 
     return (
-      <Animated.Image style={ styles.arrow }
+      <Animated.Image style={[ styles.arrow, this.props.style ]}
        source={require('../../images/arrow_icon.png')} />
     );
   },
@@ -53,9 +53,9 @@ var arrow = React.createClass({
         self.anim = Animated.timing(self.state.transY, { toValue: 0 });
         self.anim.start(function () {
           self.moveArrow();
-        }); 
+        });
       }
-    });    
+    });
   },
   componentDidMount: function () {
     var self = this;

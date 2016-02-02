@@ -2,7 +2,7 @@ var Dimensions = require('Dimensions');
 var windowSize = Dimensions.get('window');
 
 module.exports.colors = {
-  oDark: '#D9171313',
+  oDark: 'rgba(66, 53, 53, 0.8)',
   brown: '#423535',
   oLight: '#80FFFFFF',
   lightPink: '#FFE2E2',
@@ -11,6 +11,7 @@ module.exports.colors = {
   darkPink: '#CD8989',
   white: '#FFFFFF',
   lightGray: '#EAEAEA',
+  oDarkGray: 'rgba(151,151,151,0.8)',
   darkGray: '#979797',
   green: '#4AE28F',
   sDarkBrown: '#423535',

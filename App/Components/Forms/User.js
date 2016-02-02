@@ -58,8 +58,10 @@ export default class User extends React.Component {
       }
     ).start();
 
+    this.props.model.clear();
 
     Helpers.userToken.get((SESSIONDATA)=> {
+      console.log(SESSIONDATA);
       if (SESSIONDATA) {
         this.props.model.set(SESSIONDATA.user);
 
@@ -166,7 +168,7 @@ export default class User extends React.Component {
         // create new user
         Helpers.getToken((token)=> {
           this.props.model.setToken(token);
-
+          console.log(this.props.model.url(), token);
           this.props.model.save({}, {
 
             success: (model)=> {
@@ -622,7 +624,6 @@ ga snel en bekijk jouw account en ga verder met pimpen!
 
           {()=>{
             if (this.state.stepEnd === false) {
-              console.log('render me');
               return(
                 <View style={styles.arrowBtnBack}>
                   <TouchableOpacity onPress={() => { this.onBack() }}>

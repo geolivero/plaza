@@ -17,6 +17,8 @@ var Beschrijving = require('./Bakers/Beschrijving');
 var CakeTypes = require('./Bakers/Caketypes');
 var PicturePopup = require('./../Components/Widgets/PicturePopup');
 var { Icon, } = require('react-native-icons');
+var EditBtn = require('./UI/EditButton');
+var PhotoPicker = require('./../Classes/PhotoPicker');
 
 var {
   AppRegistry,
@@ -46,6 +48,7 @@ var bakers = React.createClass({
       hasContent: false,
       scrollBack: 0,
       imageURL: false,
+      bgImage: false,
       popup: '',
       collection: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2
@@ -84,6 +87,7 @@ var bakers = React.createClass({
     var uid = this.props.model.get('uid');
     this.model = new GalerieList.model();
     this.collection = new GalerieList.collection();
+    this.PhotoPicker = new PhotoPicker();
 
     Helpers.getToken((token)=> {
       this.model.setToken(token);
@@ -97,6 +101,12 @@ var bakers = React.createClass({
           });
         }
       });
+    });
+
+
+    this.setState({
+      bgImage: this.props.model.get('bgimage') ? {uri: this.props.model.get('bgimage')} : require('../../images/defaultpic.png'),
+      logoURI: this.props.model.get('logo') ? {uri: this.props.model.get('logo')} : {uri: this.props.model.get('field_logo').und[0].full_url}
     });
   },
 
@@ -136,16 +146,23 @@ var bakers = React.createClass({
   },
 
   renderProduct: function (model) {
+
     return (
-        <View key={model.get('nid')} style={[DEFCSS.whiteBg]}>
+        <View key={model.get('nid')} style={[DEFCSS.whiteBg ]}>
+        <EditBtn
+          icon='pencil'
+          editable={this.props.editable}
+          style={{top: 0, right: 0, margin: 10, position: 'relative'}}
+          onPress={()=> this.editUserPropertie('product', model.get('nid'))}/>
 
         <ScrollView
-          contentContainerStyle={DEFCSS.scrollContainer}
+          contentContainerStyle={[DEFCSS.scrollContainer]}
           pagingEnabled={true}
           style={[ styles.productRow ]}
           horizontal={true} >
 
-          <View key={model.get('nid')} style={[DEFCSS.whiteBg]}>
+          <View key={model.get('nid')} style={[DEFCSS.whiteBg, { position: 'relative' }]}>
+
               <Text style={[styles.rowBakerTxt, DEFCSS.whiteBg, DEFCSS.sansc ]}>{model.get('title')}</Text>
               <TouchableHighlight onPress={() => this.openImageGalerie(model.get('cake_pic'))}>
                 <Image style={[DEFCSS.darkBg, styles.cakeImg]}
@@ -153,6 +170,7 @@ var bakers = React.createClass({
                   resizeMode={'cover'}
                   capInsets={{left: 0, top: 0}} />
               </TouchableHighlight>
+
           </View>
           <View style={styles.slide2}>
             <View style={[DEFCSS.rowBakerLogo, DEFCSS.darkBg, {alignSelf: 'center', marginTop: 10}]}>
@@ -173,7 +191,8 @@ var bakers = React.createClass({
 
 
 
-        {this.renderPrice(model)}
+          {this.renderPrice(model)}
+
 
         </View>
     );
@@ -207,6 +226,29 @@ var bakers = React.createClass({
   },
 
   closeBakersMap() {
+
+  },
+
+  async editUserPropertie(type) {
+    console.log(type);
+
+
+    switch (type) {
+      case 'bgimage':
+        var pic = await this.PhotoPicker.upLoadPic(`bgimage_${this.props.model.get('uid')}`);
+        console.log(pic);
+        this.setState({
+          bgImage: pic.file
+        });
+        break;
+      case 'logo':
+        var pic = await this.PhotoPicker.upLoadPic(`logo_${this.props.model.get('uid')}`);
+        console.log(pic);
+        this.setState({
+          logoURI: pic.file
+        });
+        break;
+    }
 
   },
 
@@ -251,23 +293,24 @@ var bakers = React.createClass({
   },
 
   renderBgImage(model) {
-    if (this.props.model.get('bgimage')) {
-      return (<Image
-          style={[styles.bakers_bg]}
+
+    return (
+      <View style={[styles.bgWrap]}>
+        <Image
+          style={[styles.bakersBg, { position: 'relative' }]}
           resizeMode={'cover'}
-          source={{uri: this.props.model.get('bgimage')}} />
-        );
-    }
-    return (<Image
-        style={[styles.bakers_bg]}
-        resizeMode={'cover'}
-        source={require('../../images/defaultpic.png')} />);
+          source={this.state.bgImage}>
+        </Image>
+      </View>
+    );
+
   },
 
+
   render: function() {
-    console.log(this.props.model);
-    console.log(this.props.model.get('field_bedrijfsnaam_value'));
-    console.log('======');
+    // console.log(this.props.model);
+    // console.log(this.props.model.get('field_bedrijfsnaam_value'));
+    // console.log('======');
     return (
       <View style={[styles.container]}>
         {this.renderBgImage(this.props.model)}
@@ -276,16 +319,22 @@ var bakers = React.createClass({
           contentContainerStyle={DEFCSS.scrollContainer}
           style={[ DEFCSS.contentContainer, DEFCSS.contentScroller ]}>
 
-          <View style={DEFCSS.bgSpacer} />
+          <View style={DEFCSS.bgSpacer}>
+            <EditBtn icon='camera' editable={this.props.editable} style={{top: 130, right: 10}} onPress={()=> this.editUserPropertie('bgimage')}/>
+          </View>
           <PinkHeader
             title={(this.props.model.get('field_bedrijfsnaam_value') || this.props.model.get('name')).toUpperCase()}
-            subTitle={'get your cake on!'} />
+            subTitle={'get your cake on!'}>
+            <EditBtn icon='pencil' editable={this.props.editable} style={{top: -5, right: 10}} onPress={()=> this.editUserPropertie('bussname')}/>
+          </PinkHeader>
 
           <View>
-          <View style={[DEFCSS.rowBakerLogoPlaceHolder, styles.bakersLogo]}>
+            <View style={[DEFCSS.rowBakerLogoPlaceHolder, styles.bakersLogo]}>
             <Image
-            style={[DEFCSS.rowBakerLogo]}
-            source={{uri: this.props.model.get('logo')}} />
+              style={[DEFCSS.rowBakerLogo]}
+              source={this.state.logoURI}>
+              <EditBtn icon='camera' editable={this.props.editable} style={{top: 10, right: 5}} onPress={()=> this.editUserPropertie('logo')}/>
+            </Image>
             </View>
           </View>
 
@@ -376,14 +425,19 @@ var styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white'
   },
-  bakers_bg: {
+  bakersBg: {
     flex: 1,
     left: 0,
     width: windowSize.width,
     backgroundColor: 'white',
-    opacity: 0.6,
+    opacity: 0.8,
     right: 0,
     top: 0
+  },
+  bgWrap: {
+    width: windowSize.width,
+    position: 'relative',
+    flex: 1
   },
   bakersLogo: {
     bottom: Platform.OS === 'ios' ? 90 : 120
@@ -421,7 +475,9 @@ var styles = StyleSheet.create({
     height:  windowSize.width,
     top: 0
   },
-
+  productItem: {
+    position: 'relative'
+  },
   rowBakerTxt: {
     fontSize: 20,
     margin: 10
